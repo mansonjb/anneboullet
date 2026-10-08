@@ -1,0 +1,248 @@
+{
+ "oleron": [
+  {
+   "file": "oleron-01.jpg",
+   "src": "cahierNEWCO-4.jpg",
+   "w": 2400,
+   "h": 1600
+  },
+  {
+   "file": "oleron-02.jpg",
+   "src": "cahierNEWCO-9.png",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-03.jpg",
+   "src": "cahierNEWCO-32.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-04.jpg",
+   "src": "cahierNEWCO-3.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-05.jpg",
+   "src": "cahierNEWCO-5.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-06.jpg",
+   "src": "cahierNEWCO-6.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-07.jpg",
+   "src": "cahierNEWCO-10.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-08.jpg",
+   "src": "cahierNEWCO-18.png",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-09.jpg",
+   "src": "cahierNEWCO-20.png",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "oleron-10.jpg",
+   "src": "cahierNEWCO-24.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-11.jpg",
+   "src": "cahierNEWCO-27.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-12.jpg",
+   "src": "cahierNEWCO-35.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-13.jpg",
+   "src": "cahierNEWCO-44.png",
+   "w": 1023,
+   "h": 1537
+  },
+  {
+   "file": "oleron-14.jpg",
+   "src": "cahierNEWCO-47.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-15.jpg",
+   "src": "cahierNEWCO-59.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "oleron-16.jpg",
+   "src": "cahierNEWCO-63.jpg",
+   "w": 1067,
+   "h": 1600
+  }
+ ],
+ "ermitage": [
+  {
+   "file": "ermitage-01.jpg",
+   "src": "MC-1.jpg",
+   "w": 1600,
+   "h": 1068
+  },
+  {
+   "file": "ermitage-02.jpg",
+   "src": "MC-21.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-03.jpg",
+   "src": "MC-3.jpg",
+   "w": 1600,
+   "h": 1068
+  },
+  {
+   "file": "ermitage-04.jpg",
+   "src": "MC-7.jpg",
+   "w": 1600,
+   "h": 1068
+  },
+  {
+   "file": "ermitage-05.jpg",
+   "src": "MC-11.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-06.jpg",
+   "src": "MC-13.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-07.jpg",
+   "src": "MC-16.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-08.jpg",
+   "src": "MC-19.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-09.jpg",
+   "src": "MC-23.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-10.jpg",
+   "src": "MC-26.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-11.jpg",
+   "src": "MC-33.jpg",
+   "w": 1068,
+   "h": 1600
+  },
+  {
+   "file": "ermitage-12.jpg",
+   "src": "MC-36.jpg",
+   "w": 1068,
+   "h": 1600
+  }
+ ],
+ "beguin": [
+  {
+   "file": "beguin-01.jpg",
+   "src": "cahierNEWCO.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "beguin-02.jpg",
+   "src": "cahierNEWCO-5.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "beguin-03.jpg",
+   "src": "cahierNEWCO-7.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "beguin-04.jpg",
+   "src": "cahierNEWCO-11.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "beguin-05.jpg",
+   "src": "cahierNEWCO-13.jpg",
+   "w": 1600,
+   "h": 1067
+  },
+  {
+   "file": "beguin-06.jpg",
+   "src": "cahierNEWCO-14.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-07.jpg",
+   "src": "cahierNEWCO-16.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-08.jpg",
+   "src": "cahierNEWCO-21.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-09.jpg",
+   "src": "cahierNEWCO-22.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-10.jpg",
+   "src": "cahierNEWCO-25.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-11.jpg",
+   "src": "cahierNEWCO-27.jpg",
+   "w": 1067,
+   "h": 1600
+  },
+  {
+   "file": "beguin-12.jpg",
+   "src": "cahierNEWCO-31.jpg",
+   "w": 1067,
+   "h": 1600
+  }
+ ]
+}
