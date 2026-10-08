@@ -1,9 +1,26 @@
-import { getProjet, type Projet } from "@/data/projets";
+import { getProjet, type Projet, type QR, type Section } from "@/data/projets";
 import { Arrow, Ph } from "./ui";
 
+const SITE = "https://anneboullet.vercel.app";
+
+export function JsonLd({ data }: { data: object }) {
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export function Crumbs({ items }: { items: { href?: string; label: string }[] }) {
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ href: "/", label: "Accueil" }, ...items].map((it, k) => ({
+      "@type": "ListItem",
+      position: k + 1,
+      name: it.label,
+      ...(it.href ? { item: `${SITE}${it.href}` } : {}),
+    })),
+  };
   return (
     <nav className="crumbs" aria-label="Fil d'Ariane">
+      <JsonLd data={ld} />
       <ol>
         <li>
           <a href="/">Accueil</a>
@@ -13,6 +30,75 @@ export function Crumbs({ items }: { items: { href?: string; label: string }[] })
         ))}
       </ol>
     </nav>
+  );
+}
+
+export function Prose({ sections, className = "" }: { sections: Section[]; className?: string }) {
+  return (
+    <div className={`prose ${className}`}>
+      {sections.map((s) => (
+        <section key={s.titre}>
+          <h2 className="serif">{s.titre}</h2>
+          {s.paragraphes?.map((p) => (
+            <p key={p.slice(0, 30)}>{p}</p>
+          ))}
+          {s.liste && (
+            <ul>
+              {s.liste.map((l) => (
+                <li key={l.slice(0, 30)}>{l}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+    </div>
+  );
+}
+
+export function FaqBlock({ items, titre }: { items: QR[]; titre?: React.ReactNode }) {
+  if (!items.length) return null;
+  const ok = items.filter((q) => !q.r.startsWith("["));
+  return (
+    <section className="sec">
+      {ok.length > 0 && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: ok.map((q) => ({ "@type": "Question", name: q.q, acceptedAnswer: { "@type": "Answer", text: q.r } })),
+          }}
+        />
+      )}
+      <div className="sec-top">
+        <h2 className="h2 serif">
+          {titre ?? (
+            <>
+              Questions <span className="mute">fréquentes</span>
+            </>
+          )}
+        </h2>
+      </div>
+      <Accordion items={items} />
+    </section>
+  );
+}
+
+export function Chips({ items, titre }: { items: { href: string; label: string }[]; titre: string }) {
+  if (!items.length) return null;
+  return (
+    <div className="chips">
+      <p className="pro2-kicker">{titre}</p>
+      <ul>
+        {items.map((it) => (
+          <li key={it.href}>
+            <a href={it.href}>
+              {it.label}
+              <Arrow size={12} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

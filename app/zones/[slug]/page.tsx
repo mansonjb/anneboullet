@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Crumbs, Cta, PageHead, ProjetsLies } from "@/components/blocks";
+import { Crumbs, Cta, FaqBlock, JsonLd, PageHead, ProjetsLies, Prose } from "@/components/blocks";
 import { Arrow } from "@/components/ui";
 import { autresZones, missions, zones } from "@/data/site";
 
@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/zones/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const z = zones.find((x) => x.slug === slug);
-  return { title: z?.h1 ?? "Secteur", description: z?.lede };
+  return { title: z?.seoTitre ?? "Secteur", description: z?.description };
 }
 
 export default async function ZonePage({ params }: PageProps<"/zones/[slug]">) {
@@ -24,6 +24,16 @@ export default async function ZonePage({ params }: PageProps<"/zones/[slug]">) {
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Anne Boullet Studio",
+          description: z.description,
+          address: { "@type": "PostalAddress", addressLocality: "La Rochelle", postalCode: "17000", addressCountry: "FR" },
+          areaServed: z.communes.map((c) => ({ "@type": "City", name: c })),
+        }}
+      />
       <Crumbs items={[{ label: "Secteurs" }, { label: z.nom }]} />
       <PageHead kicker={`Secteur · ${z.nom}`} h1={z.h1} lede={z.lede} />
 
@@ -42,6 +52,10 @@ export default async function ZonePage({ params }: PageProps<"/zones/[slug]">) {
             ))}
           </ul>
         </div>
+      </section>
+
+      <section className="sec">
+        <Prose sections={z.sections} className="prose-center" />
       </section>
 
       <ProjetsLies slugs={z.projets} titre={`Un projet à ${z.nom === "Île de Ré" ? "l'Île de Ré" : z.nom}`} />
@@ -65,6 +79,8 @@ export default async function ZonePage({ params }: PageProps<"/zones/[slug]">) {
           ))}
         </div>
       </section>
+
+      <FaqBlock items={z.faq} />
 
       <section className="sec zone-others">
         <p className="pro2-kicker">Le studio intervient aussi à</p>

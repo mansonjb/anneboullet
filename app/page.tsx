@@ -6,7 +6,8 @@ import { contact } from "@/data/site";
 import { Arrow, Ph } from "@/components/ui";
 import { ProjetCard } from "@/components/blocks";
 import { getProjet, type Projet } from "@/data/projets";
-import { missions } from "@/data/site";
+import { missions, services } from "@/data/site";
+import { Chips, JsonLd } from "@/components/blocks";
 
 const oleron = getProjet("maison-de-famille-saint-denis-d-oleron") as Projet;
 const parpaillaud = getProjet("maison-de-village-saint-clement-des-baleines") as Projet;
@@ -33,6 +34,18 @@ const etapes = [
 export default function Home() {
   return (
     <>
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              name: "Anne Boullet Studio",
+              description: "Décoratrice d'intérieur à La Rochelle : conseil, conception et décoration pour les particuliers et les professionnels.",
+              url: "https://anneboullet.vercel.app",
+              address: { "@type": "PostalAddress", addressLocality: "La Rochelle", postalCode: "17000", addressCountry: "FR" },
+              areaServed: ["La Rochelle", "Île de Ré", "Oléron", "Châtelaillon-Plage", "Rochefort", "Royan", "Saintes"],
+              knowsAbout: ["Décoration d'intérieur", "Agencement intérieur", "Signalétique", "Rénovation"],
+            }}
+          />
           <section className="hero">
             <h1 className="h1 serif">
               Décoratrice d&apos;intérieur <span className="mute">à La Rochelle</span>
@@ -140,6 +153,9 @@ export default function Home() {
                   </li>
                 ))}
               </ol>
+            </div>
+            <div className="home-chips">
+              <Chips titre="Les savoir-faire du studio" items={services.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
             </div>
           </section>
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Accordion, Crumbs, Cta, PageHead, ProjetsLies } from "@/components/blocks";
+import { Chips, Crumbs, Cta, FaqBlock, JsonLd, PageHead, ProjetsLies, Prose } from "@/components/blocks";
 import { Arrow, Ph } from "@/components/ui";
 import { getProjet } from "@/data/projets";
-import { faq, missions } from "@/data/site";
+import { missions, services } from "@/data/site";
 
 export const dynamicParams = false;
 
@@ -14,7 +14,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/missions/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const m = missions.find((x) => x.slug === slug);
-  return { title: m?.h1 ?? "Mission", description: m ? `${m.lede} ${m.recu.join(", ")}.` : undefined };
+  return { title: m?.seoTitre ?? "Mission", description: m?.description };
 }
 
 export default async function MissionPage({ params }: PageProps<"/missions/[slug]">) {
@@ -23,10 +23,20 @@ export default async function MissionPage({ params }: PageProps<"/missions/[slug
   if (!m) notFound();
   const p = getProjet(m.photo.projet);
   const autres = missions.filter((x) => x.slug !== m.slug);
-  const questions = faq.flatMap((g) => g.items).filter((q) => !q.r.startsWith("[")).slice(0, 4);
+  const svc = services.filter((s) => m.services.includes(s.slug));
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: m.h1,
+          description: m.description,
+          provider: { "@type": "ProfessionalService", name: "Anne Boullet Studio", address: { "@type": "PostalAddress", addressLocality: "La Rochelle", postalCode: "17000", addressCountry: "FR" } },
+          areaServed: ["La Rochelle", "Île de Ré", "Oléron", "Rochefort", "Royan", "Saintes"],
+        }}
+      />
       <Crumbs items={[{ href: "/#missions", label: "Missions" }, { label: m.titre }]} />
       <PageHead kicker={`Mission ${m.n}`} h1={m.h1} lede={m.lede} />
 
@@ -57,6 +67,13 @@ export default async function MissionPage({ params }: PageProps<"/missions/[slug
         )}
       </section>
 
+      <section className="sec p-body p-body-solo">
+        <Prose sections={m.sections} />
+        <aside className="p-side">
+          <Chips titre="Savoir-faire liés" items={svc.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
+        </aside>
+      </section>
+
       <section className="sec">
         <div className="methode" style={{ marginTop: 0 }}>
           <h2 className="serif methode-t">
@@ -76,14 +93,7 @@ export default async function MissionPage({ params }: PageProps<"/missions/[slug
 
       {p && <ProjetsLies slugs={[p.slug]} />}
 
-      <section className="sec">
-        <div className="sec-top">
-          <h2 className="h2 serif">
-            Questions <span className="mute">fréquentes</span>
-          </h2>
-        </div>
-        <Accordion items={questions} />
-      </section>
+      <FaqBlock items={m.faq} />
 
       <section className="sec">
         <div className="sec-top">

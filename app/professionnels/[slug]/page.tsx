@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Accordion, Crumbs, Cta, PageHead, ProjetsLies } from "@/components/blocks";
-import { faq, secteurs } from "@/data/site";
+import { Chips, Crumbs, Cta, FaqBlock, PageHead, ProjetsLies, Prose } from "@/components/blocks";
+import { secteurs } from "@/data/site";
 
 export const dynamicParams = false;
 
@@ -13,14 +13,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/professionnels/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const s = secteurs.find((x) => x.slug === slug);
-  return { title: s?.h1 ?? "Professionnels", description: s?.lede };
+  return { title: s?.seoTitre ?? "Professionnels", description: s?.description };
 }
 
 export default async function SecteurPage({ params }: PageProps<"/professionnels/[slug]">) {
   const { slug } = await params;
   const s = secteurs.find((x) => x.slug === slug);
   if (!s) notFound();
-  const questions = faq.find((g) => g.groupe === "Professionnels")?.items ?? [];
 
   return (
     <>
@@ -59,16 +58,24 @@ export default async function SecteurPage({ params }: PageProps<"/professionnels
         </figure>
       </section>
 
+      <section className="sec p-body p-body-solo">
+        <Prose sections={s.sections} />
+        <aside className="p-side">
+          <Chips
+            titre="Savoir-faire mobilisés"
+            items={[
+              { href: "/services/agencement-interieur", label: "Agencement intérieur" },
+              { href: "/services/signaletique", label: "Signalétique" },
+              { href: "/services/decoration-interieure", label: "Décoration intérieure" },
+              { href: "/services/plans-de-principe-et-3d", label: "Plans de principe et 3D" },
+            ]}
+          />
+        </aside>
+      </section>
+
       {s.projet && <ProjetsLies slugs={[s.projet]} />}
 
-      <section className="sec">
-        <div className="sec-top">
-          <h2 className="h2 serif">
-            Questions <span className="mute">des professionnels</span>
-          </h2>
-        </div>
-        <Accordion items={questions} />
-      </section>
+      <FaqBlock items={s.faq} titre={<>Questions <span className="mute">des professionnels</span></>} />
       <Cta titre="Parlons de votre lieu" texte="Un premier échange pour comprendre votre activité, vos équipes et vos contraintes." />
     </>
   );

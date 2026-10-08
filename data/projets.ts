@@ -1,51 +1,92 @@
 import photos from "./photos.json";
 
 export type Photo = { file: string; src: string; w: number; h: number };
+export type Section = { titre: string; paragraphes?: string[]; liste?: string[] };
+export type QR = { q: string; r: string };
 
 export type Projet = {
   slug: string;
   titre: string;
+  sousTitre: string;
+  seoTitre: string;
+  description: string;
   type: "Particulier" | "Professionnel";
   commune: string;
   zone?: string;
   meta: string[];
   resume: string;
-  texte: { titre: string; paragraphes: string[] }[];
+  texte: Section[];
+  matieres?: string[];
+  faq?: QR[];
   partenaires?: string[];
   photos: Photo[];
   alt: string;
   mission?: string;
   secteur?: string;
+  services?: string[];
 };
 
 const p = photos as Record<string, Photo[]>;
-const A_VENIR = "[Quelques lignes à venir : la demande de départ, le parti pris et le résultat.]";
+const INFOS = "[Commune, surface et demande de départ à compléter avec Anne.]";
 
 export const projets: Projet[] = [
   {
     slug: "maison-de-famille-saint-denis-d-oleron",
     titre: "Maison de famille, Saint-Denis-d'Oléron",
+    sousTitre: "Rénovation et extension d'une maison de 92 à plus de 170 m²",
+    seoTitre: "Rénovation et extension d'une maison à Saint-Denis-d'Oléron",
+    description:
+      "Une maison de 92 m² rénovée et agrandie de 80 m² à Saint-Denis-d'Oléron : redistribution complète, esprit cabane, bois, lin et rotin. Conception et décoration par Anne Boullet Studio.",
     type: "Particulier",
     commune: "Saint-Denis-d'Oléron",
     zone: "oleron",
     mission: "conception",
+    services: ["agencement-interieur", "plans-de-principe-et-3d", "decoration-interieure", "shopping-list"],
     meta: ["Conception et décoration", "170 m²", "2024 · 2025"],
-    resume: "Une maison de 92 m² rénovée et agrandie de 80 m², pour devenir la maison de famille.",
+    resume: "Une résidence secondaire devenue maison de famille : 92 m² rénovés, 80 m² ajoutés, et une maison qui semble avoir toujours été là.",
     texte: [
+      {
+        titre: "Le lieu",
+        paragraphes: [
+          "Une maison de 92 m² à Saint-Denis-d'Oléron, à la pointe nord de l'île, au bâti standard et sans caractère particulier. Une résidence secondaire que ses propriétaires voulaient transformer en vraie maison de famille, en anticipant leur retraite, avec une piscine.",
+        ],
+      },
       {
         titre: "La demande",
         paragraphes: [
-          "Une résidence secondaire appelée à devenir la maison de famille, en anticipant la retraite des propriétaires, avec une piscine. Le point de départ : révéler un bâti standard.",
-          "La maison de 92 m² a été entièrement rénovée et agrandie de 80 m², avec un architecte pour le permis de construire de l'extension.",
+          "Révéler la maison : lui donner du volume, de la lumière et une âme, tout en accueillant plus de monde. L'extension de 80 m² a fait l'objet d'un permis de construire, porté par un architecte partenaire.",
         ],
       },
       {
-        titre: "Le projet",
+        titre: "Le parti pris",
         paragraphes: [
-          "Une redistribution complète, pensée à partir des usages et du mobilier existant. Un esprit « cabane » : bois, lin, jute, rotin, charpente apparente et suspensions en fibres naturelles, deux patios de part et d'autre de la salle à manger.",
-          "La décoration se lit comme un carnet de souvenirs : objets de famille, voyages, chine et pièces contemporaines. Résultat : du confort, du volume, de la lumière, et un lieu authentique et singulier.",
+          "J'ai redistribué entièrement les espaces à partir des usages de la famille et du mobilier qu'elle souhaitait garder. Le fil conducteur : un esprit « cabane », chaleureux et sans prétention, qui fait oublier qu'il s'agit d'une construction récente.",
+          "Deux patios encadrent la salle à manger, au cœur de la circulation, et font entrer la lumière au centre de la maison. La charpente est laissée apparente, et les suspensions en fibres naturelles soulignent la hauteur sous plafond.",
         ],
       },
+      {
+        titre: "Pièce par pièce",
+        liste: [
+          "Le séjour : sous la charpente en bois blond, un grand volume ouvert, des banquettes, des tables basses en bois et des suspensions en rotin.",
+          "La cuisine : des façades blanches, un îlot habillé de bois et des tabourets assortis, ouverte sur la pièce de vie.",
+          "Les chambres : des têtes de lit en lambris de bois, du linge en lin et des touches de terracotta.",
+          "La salle d'eau : un meuble double vasque en bois, des miroirs ovales et des appliques en laiton.",
+          "La terrasse couverte : prolongement du séjour, avec du mobilier en bois et des textiles rayés.",
+        ],
+      },
+      {
+        titre: "Une décoration comme un carnet de souvenirs",
+        paragraphes: [
+          "Objets de famille, souvenirs de voyages, pièces chinées et mobilier contemporain se répondent dans chaque pièce. J'ai établi la shopping list, et la cliente a réalisé elle-même les achats.",
+          "Résultat : du confort, du volume, de la fonctionnalité et de la lumière. Un lieu authentique et singulier, où chacun trouve sa place.",
+        ],
+      },
+    ],
+    matieres: ["Bois blond", "Lin", "Jute", "Rotin", "Fibres naturelles", "Laiton"],
+    faq: [
+      { q: "Peut-on donner du caractère à une maison récente ?", r: "Oui. Ici, une maison au bâti standard a trouvé une âme grâce à la redistribution des espaces, à la charpente laissée apparente et à des matières naturelles : bois, lin, jute et rotin." },
+      { q: "Qui dépose le permis de construire pour une extension ?", r: "Pour cette extension de 80 m², le permis de construire a été porté par un architecte partenaire. Je travaille la conception intérieure en lien avec lui." },
+      { q: "Peut-on garder ses meubles dans un projet de rénovation ?", r: "Oui. La redistribution de cette maison a été pensée à partir du mobilier que la famille souhaitait conserver." },
     ],
     partenaires: ["[Liste des artisans à confirmer]"],
     photos: p.oleron,
@@ -54,47 +95,101 @@ export const projets: Projet[] = [
   {
     slug: "maison-de-village-saint-clement-des-baleines",
     titre: "Maison de village, Saint-Clément-des-Baleines",
+    sousTitre: "Rénovation complète d'une maison de 130 m² sur l'Île de Ré",
+    seoTitre: "Rénovation d'une maison de village à Saint-Clément-des-Baleines, Île de Ré",
+    description:
+      "Rénovation complète d'une maison de village de 130 m² à Saint-Clément-des-Baleines, sur l'Île de Ré : arches, travertin, zellige, pierre et teintes chaudes. Conception par Anne Boullet Studio.",
     type: "Particulier",
     commune: "Saint-Clément-des-Baleines",
     zone: "ile-de-re",
     mission: "conception",
+    services: ["agencement-interieur", "plans-de-principe-et-3d", "planches-d-ambiance"],
     meta: ["Conception", "130 m²", "2023 · 2024"],
-    resume: "Une maison de village restée dans son état d'origine, achetée comme résidence secondaire.",
+    resume: "Une maison restée dans son jus, à la pointe de l'Île de Ré, entièrement repensée pour la famille, les amis et la location.",
     texte: [
+      {
+        titre: "Le lieu",
+        paragraphes: [
+          "Une maison de village de 130 m² à Saint-Clément-des-Baleines, tout au bout de l'Île de Ré, restée dans son état d'origine. Ses nouveaux propriétaires l'ont achetée comme résidence secondaire.",
+        ],
+      },
       {
         titre: "La demande",
         paragraphes: [
-          "Une maison de 130 m² dans son état d'origine, achetée comme résidence secondaire, pour la famille, les amis et une location éventuelle.",
+          "Une maison à vivre en famille et entre amis, et qui puisse aussi être louée. Il fallait donc des chambres confortables, des salles d'eau faciles d'entretien et des pièces communes généreuses.",
         ],
       },
       {
-        titre: "Le projet",
+        titre: "Le parti pris",
         paragraphes: [
-          "Une redistribution complète avec déclaration préalable pour la façade, en travaillant les circulations, les perspectives et les dimensions du mobilier.",
-          "Le charme d'une maison de village : arches, matériaux bruts, travertin, bois, zelliges et pierre, avec des teintes chaudes sur les murs de têtes de lit et dans les salles d'eau. Résultat : une maison réappropriée, pour des vacances détendues.",
+          "J'ai repensé entièrement la distribution des pièces, en travaillant les circulations, les perspectives d'une pièce à l'autre et les dimensions du mobilier. La modification de la façade a fait l'objet d'une déclaration préalable, déposée par le studio.",
+          "L'objectif : garder le charme d'une maison de village rétaise, avec ses arches et ses matériaux bruts, tout en la rendant simple à vivre.",
         ],
       },
+      {
+        titre: "Pièce par pièce",
+        liste: [
+          "La pièce de vie : sous les poutres en bois, un grand séjour ouvert, une table de ferme et de grandes suspensions blanches.",
+          "La cuisine : des façades vert sauge, un plan clair et des étagères en bois.",
+          "Les niches en arche : creusées dans les murs, elles accueillent rangements et objets.",
+          "Les chambres : chacune sa teinte chaude en tête de lit, terracotta, ocre ou kaki, avec des rangements et des bureaux sur mesure.",
+          "Les salles d'eau : du zellige vert, des miroirs aux formes organiques et des meubles sur mesure.",
+          "Le patio : un mur de pierre sèche et un banc maçonné blanc.",
+        ],
+      },
+      {
+        titre: "Le résultat",
+        paragraphes: ["Une maison que ses propriétaires se sont réappropriée, pensée pour des vacances détendues, seuls, en famille ou avec des locataires."],
+      },
+    ],
+    matieres: ["Travertin", "Bois", "Zellige", "Pierre", "Chaux", "Teintes chaudes"],
+    faq: [
+      { q: "Faut-il une autorisation pour modifier une façade sur l'Île de Ré ?", r: "Oui, la modification d'une façade demande au minimum une déclaration préalable. Pour cette maison, le studio l'a déposée en mairie." },
+      { q: "Comment rendre une résidence secondaire facile à louer ?", r: "En soignant les chambres et les salles d'eau, en choisissant des matériaux faciles d'entretien et en dimensionnant le mobilier pour accueillir plusieurs personnes, comme dans cette maison." },
     ],
     partenaires: ["[Liste des artisans à confirmer]"],
     photos: p.parpaillaud,
-    alt: "Maison de village à Saint-Clément-des-Baleines",
+    alt: "Maison de village à Saint-Clément-des-Baleines, Île de Ré",
   },
   {
     slug: "salle-a-manger-parents-maternite-la-rochelle",
     titre: "Salle à manger des parents, maternité de La Rochelle",
+    sousTitre: "Aménagement, décoration et signalétique d'un espace hospitalier",
+    seoTitre: "Aménagement d'une salle à manger pour les parents, maternité de La Rochelle",
+    description:
+      "Aménagement et signalétique de la salle à manger des parents à la maternité de l'hôpital de La Rochelle : papier peint végétal, mobilier, messages pour les familles.",
     type: "Professionnel",
     commune: "La Rochelle",
     zone: "la-rochelle",
     secteur: "sante",
+    services: ["signaletique", "decoration-interieure", "agencement-interieur"],
     meta: ["Santé", "Aménagement et signalétique", "La Rochelle"],
-    resume: "Un lieu de pause pour les jeunes parents, au sein de la maternité de l'hôpital de La Rochelle.",
+    resume: "Un lieu de pause pour les jeunes parents, au cœur de la maternité de l'hôpital de La Rochelle.",
     texte: [
       {
         titre: "Le projet",
         paragraphes: [
-          "Une salle à manger parentale repensée : papier peint végétal, mobilier, signalétique et messages pour les familles. Un projet mené bénévolement.",
+          "La salle à manger où les parents prennent leurs repas pendant le séjour à la maternité. Un projet mené bénévolement, pour offrir aux familles un moment de calme dans un environnement hospitalier.",
         ],
       },
+      {
+        titre: "Ce qui a été fait",
+        liste: [
+          "Un papier peint végétal à grande échelle, qui apaise la pièce et fait oublier le cadre hospitalier.",
+          "Des murs en vert de gris et en bordeaux, un mobilier coloré et des tables en bois.",
+          "Une signalétique sur mesure : plaques de porte, consignes de tri, messages pour les parents, fontaine à eau.",
+          "Un coin petit-déjeuner organisé et lisible.",
+        ],
+      },
+      {
+        titre: "Pourquoi la signalétique compte",
+        paragraphes: [
+          "Dans un lieu de soin, les messages doivent être clairs sans être froids. Ici, la signalétique reprend les codes graphiques de la décoration : elle informe et participe à l'ambiance.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Un hôpital peut-il faire appel à une décoratrice d'intérieur ?", r: "Oui. À la maternité de La Rochelle, j'ai repensé la salle à manger des parents, de la décoration à la signalétique." },
     ],
     photos: p.maternite,
     alt: "Salle à manger des parents, maternité de La Rochelle",
@@ -102,47 +197,117 @@ export const projets: Projet[] = [
   {
     slug: "projet-ermitage",
     titre: "Projet Ermitage",
+    sousTitre: "Un séjour orange, des bibliothèques sur mesure et des fibres naturelles",
+    seoTitre: "Projet Ermitage : séjour coloré et bibliothèques sur mesure",
+    description: "Projet Ermitage par Anne Boullet Studio : mur orange, bibliothèques et banquette sur mesure, cuisine blanche et laiton, suspensions en rotin.",
     type: "Particulier",
     commune: "[Commune]",
+    services: ["agencement-interieur", "decoration-interieure"],
     meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: A_VENIR,
-    texte: [],
+    resume: "Une pièce de vie structurée par la couleur : un grand mur orange habillé de bibliothèques, et des matières naturelles tout autour.",
+    texte: [
+      { titre: "Le projet", paragraphes: [INFOS] },
+      {
+        titre: "Ce que montrent les photos",
+        liste: [
+          "Un mur orange qui structure la pièce de vie et accueille la cheminée et un grand miroir organique.",
+          "Des bibliothèques sur mesure, laquées dans la même teinte, avec une banquette et ses coussins.",
+          "Une cuisine blanche aux façades rainurées, des poignées en laiton et une crédence en carreaux clairs.",
+          "Un comptoir en carreaux de terre cuite et des tabourets noirs.",
+          "Des suspensions en rotin et en fibres naturelles au-dessus de la table et de la banquette.",
+          "Une chambre avec papier peint à motif de palmiers et linge bleu nuit.",
+        ],
+      },
+    ],
+    matieres: ["Rotin", "Laiton", "Terre cuite", "Bois"],
     photos: p.ermitage,
-    alt: "Projet Ermitage",
+    alt: "Projet Ermitage, séjour avec mur orange et bibliothèques sur mesure",
   },
   {
     slug: "projet-beguin",
     titre: "Projet Beguin",
+    sousTitre: "Papier peint panoramique, salles d'eau vert d'eau et rotin",
+    seoTitre: "Projet Beguin : chambre au papier peint panoramique et salle de bains vert d'eau",
+    description: "Projet Beguin par Anne Boullet Studio : papier peint panoramique en tête de lit, salle de bains en zellige vert d'eau et robinetterie laiton, coin lecture en rotin.",
     type: "Particulier",
     commune: "[Commune]",
+    services: ["decoration-interieure", "planches-d-ambiance"],
     meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: A_VENIR,
-    texte: [],
+    resume: "Des chambres qui racontent un paysage, des salles d'eau douces et lumineuses.",
+    texte: [
+      { titre: "Le projet", paragraphes: [INFOS] },
+      {
+        titre: "Ce que montrent les photos",
+        liste: [
+          "Une chambre dont la tête de lit est un papier peint panoramique, paysage de pins et de bord de mer.",
+          "Des suspensions frangées couleur rouille et des coussins velours vert olive.",
+          "Une salle de bains en carreaux vert d'eau, sol en granito, robinetterie et pommeau de douche en laiton brossé.",
+          "Des suspensions en céramique et bois, et des niches en arche.",
+          "Un coin lecture près de la fenêtre : banquette, fauteuils en rotin et coussins aux tons chauds.",
+          "Des rangements sur mesure laqués terracotta.",
+        ],
+      },
+    ],
+    matieres: ["Rotin", "Laiton", "Granito", "Velours"],
     photos: p.beguin,
-    alt: "Projet Beguin",
+    alt: "Projet Beguin, chambre au papier peint panoramique",
   },
   {
     slug: "projet-saint-claude",
     titre: "Projet Saint Claude",
+    sousTitre: "Parquet ancien, cheminées de marbre et cuisine vert sauge",
+    seoTitre: "Projet Saint Claude : rénovation d'une maison ancienne, parquet et cuisine sauge",
+    description: "Projet Saint Claude par Anne Boullet Studio : parquet ancien, cheminées en marbre noir, miroirs dorés, carreaux ciment bleus et cuisine vert sauge.",
     type: "Particulier",
     commune: "[Commune]",
+    services: ["decoration-interieure", "agencement-interieur"],
     meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: A_VENIR,
-    texte: [],
+    resume: "Une maison ancienne qui garde ses éléments d'origine, et des pièces d'eau résolument graphiques.",
+    texte: [
+      { titre: "Le projet", paragraphes: [INFOS] },
+      {
+        titre: "Ce que montrent les photos",
+        liste: [
+          "Des chambres lumineuses sur parquet ancien, avec cheminée en marbre noir et miroir doré.",
+          "Un escalier en bois à balustres.",
+          "Une douche habillée de carreaux ciment à motif géométrique bleu marine.",
+          "Une cuisine aux façades vert sauge, plan de travail clair et robinetterie laiton.",
+          "Des suspensions en tissu et en rotin, et des miroirs aux formes organiques.",
+        ],
+      },
+    ],
+    matieres: ["Parquet ancien", "Marbre", "Carreaux ciment", "Laiton"],
     photos: p.saintclaude,
-    alt: "Projet Saint Claude",
+    alt: "Projet Saint Claude, chambre sur parquet ancien",
   },
   {
     slug: "projet-bodilis",
     titre: "Projet Bodilis",
+    sousTitre: "Un papier peint jungle et un meuble bibliothèque sur mesure",
+    seoTitre: "Projet Bodilis : papier peint panoramique et bibliothèque sur mesure",
+    description: "Projet Bodilis par Anne Boullet Studio : papier peint panoramique jungle, meuble bibliothèque et télévision sur mesure, banquette en bois et suspensions en rotin.",
     type: "Particulier",
     commune: "[Commune]",
     mission: "decoration",
+    services: ["decoration-interieure", "agencement-interieur"],
     meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: A_VENIR,
-    texte: [],
+    resume: "Une pièce de vie rythmée par un grand papier peint panoramique et un meuble sur mesure.",
+    texte: [
+      { titre: "Le projet", paragraphes: [INFOS] },
+      {
+        titre: "Ce que montrent les photos",
+        liste: [
+          "Un papier peint panoramique, scène de jungle aux tons doux, sur toute la hauteur du mur.",
+          "Un meuble bibliothèque et télévision sur mesure, fond vert, étagères en escalier.",
+          "Une banquette en bois clair avec rangement pour les bûches, sous le papier peint.",
+          "Des suspensions en rotin au-dessus de la table.",
+          "Des coussins terracotta, blancs et rayés vert.",
+        ],
+      },
+    ],
+    matieres: ["Rotin", "Bois clair", "Papier peint panoramique"],
     photos: p.bodilis,
-    alt: "Projet Bodilis",
+    alt: "Projet Bodilis, papier peint panoramique et banquette",
   },
 ];
 

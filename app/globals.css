@@ -522,3 +522,28 @@ html{scroll-behavior:smooth}
 .temo-stack{display:grid}
 .temo-stack .temo-q{grid-area:1 / 1;align-self:center;opacity:0;visibility:hidden;animation:none;transition:opacity .5s ease,visibility .5s}
 .temo-stack .temo-q.on{opacity:1;visibility:visible}
+
+/* ===== contenus longs ===== */
+.p-sub{font-size:24px;line-height:1.3;color:var(--accent);margin:14px 0 0;font-style:var(--fs)}
+.p-body{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:64px;padding-top:72px;align-items:start}
+.p-side{position:sticky;top:24px;display:flex;flex-direction:column;gap:28px}
+.p-side .p-links{flex-direction:column;margin-top:0}
+.p-side .p-links a,.p-side .p-links div{justify-content:space-between}
+.prose section+section{margin-top:44px}
+.prose h2{font-size:30px;line-height:1.15;margin:0 0 14px}
+.prose p{margin:0 0 14px;color:#3E3832;font-size:17px;line-height:1.7;max-width:40em}
+.prose ul{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;max-width:40em}
+.prose li{position:relative;padding-left:22px;color:#3E3832;line-height:1.6}
+.prose li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1.5px;background:var(--accent)}
+.prose-center{max-width:780px;margin:0 auto}
+.mat-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.mat-tags li{padding:6px 14px;border-radius:999px;background:var(--tint);color:var(--accent);font-size:14px}
+.chips ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #DDD4C8;font-size:14px;text-decoration:none;color:#2A2622;transition:background-color .25s,color .25s,border-color .25s}
+.chips a svg{stroke:var(--accent);transition:transform .25s}
+.chips a:hover{background:var(--surface);border-color:var(--surface);color:#fff}
+.chips a:hover svg{stroke:#fff;transform:translateX(3px)}
+.home-chips{margin-top:64px;text-align:center}
+.home-chips ul{justify-content:center}
+.ft-cols{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:960px){.p-body{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:44px}.p-side{position:static}.prose h2{font-size:25px}.prose p{font-size:16px}.p-sub{font-size:20px}.ft-cols{grid-template-columns:1fr 1fr}}

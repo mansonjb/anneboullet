@@ -1,4 +1,4 @@
-import { contact, missions, secteurs, zones } from "@/data/site";
+import { contact, missions, secteurs, services, zones } from "@/data/site";
 import { Logo } from "./ui";
 
 export default function Footer() {
@@ -25,6 +25,16 @@ export default function Footer() {
             {missions.map((m) => (
               <li key={m.slug}>
                 <a href={`/missions/${m.slug}`}>{m.titre}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p>Savoir-faire</p>
+          <ul>
+            {services.map((s) => (
+              <li key={s.slug}>
+                <a href={`/services/${s.slug}`}>{s.nom}</a>
               </li>
             ))}
           </ul>
