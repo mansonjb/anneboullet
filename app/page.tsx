@@ -11,7 +11,7 @@ import { JsonLd } from "@/components/blocks";
 
 const oleron = getProjet("maison-de-famille-saint-denis-d-oleron") as Projet;
 const parpaillaud = getProjet("maison-de-village-saint-clement-des-baleines") as Projet;
-const ermitage = getProjet("projet-ermitage") as Projet;
+const ermitage = getProjet("decoration-maison-esprit-surf-la-rochelle") as Projet;
 
 
 const matieres = [
@@ -20,7 +20,7 @@ const matieres = [
   { nom: "Les textiles", ligne: "Lin et tissus imprimés invitent à s'installer.", img: "lin", lieu: "Coussins, Saint-Denis-d'Oléron" },
   { nom: "Le zellige", ligne: "Chaque carreau renvoie la lumière à sa façon.", img: "zellige", lieu: "Douche, Saint-Clément-des-Baleines" },
   { nom: "La pierre", ligne: "Elle garde la mémoire du lieu.", img: "pierre", lieu: "Mur en pierre, Saint-Clément-des-Baleines" },
-  { nom: "Le laiton", ligne: "Il se patine avec le temps et réchauffe la lumière.", img: "laiton", lieu: "Pommeau de douche, projet Beguin" },
+  { nom: "Le laiton", ligne: "Il se patine avec le temps et réchauffe la lumière.", img: "laiton", lieu: "Pommeau de douche, Les Portes-en-Ré" },
 ];
 
 const etapes = [

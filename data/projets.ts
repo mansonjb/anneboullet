@@ -27,7 +27,6 @@ export type Projet = {
 };
 
 const p = photos as Record<string, Photo[]>;
-const INFOS = "[Commune, surface et demande de départ à compléter avec Anne.]";
 
 export const projets: Projet[] = [
   {
@@ -195,119 +194,208 @@ export const projets: Projet[] = [
     alt: "Salle à manger des parents, maternité de La Rochelle",
   },
   {
-    slug: "projet-ermitage",
-    titre: "Projet Ermitage",
-    sousTitre: "Un séjour orange, des bibliothèques sur mesure et des fibres naturelles",
-    seoTitre: "Projet Ermitage : séjour coloré et bibliothèques sur mesure",
-    description: "Projet Ermitage par Anne Boullet Studio : mur orange, bibliothèques et banquette sur mesure, cuisine blanche et laiton, suspensions en rotin.",
+    slug: "maison-de-ville-renovee-la-rochelle",
+    titre: "Maison de ville, La Rochelle",
+    sousTitre: "Rénovation d'une maison de ville de 160 m², entre location et résidence secondaire",
+    seoTitre: "Rénovation d'une maison de ville de 160 m² à La Rochelle",
+    description:
+      "Maison de ville de 160 m² rénovée à La Rochelle : redistribution des espaces, déclaration préalable, pierre d'origine, sol en pierre artisanal, menuiseries en fer forgé. Conception par Anne Boullet Studio.",
     type: "Particulier",
-    commune: "[Commune]",
+    commune: "La Rochelle",
+    zone: "la-rochelle",
+    mission: "conception",
     services: ["agencement-interieur", "decoration-interieure"],
-    meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: "Une pièce de vie structurée par la couleur : un grand mur orange habillé de bibliothèques, et des matières naturelles tout autour.",
+    meta: ["Conception", "160 m²", "2023 · 2024"],
+    resume: "Une belle maison de ville rochelaise qui retrouve ses lettres de noblesse et met désormais en valeur son histoire.",
     texte: [
-      { titre: "Le projet", paragraphes: [INFOS] },
       {
-        titre: "Ce que montrent les photos",
-        liste: [
-          "Un mur orange qui structure la pièce de vie et accueille la cheminée et un grand miroir organique.",
-          "Des bibliothèques sur mesure, laquées dans la même teinte, avec une banquette et ses coussins.",
-          "Une cuisine blanche aux façades rainurées, des poignées en laiton et une crédence en carreaux clairs.",
-          "Un comptoir en carreaux de terre cuite et des tabourets noirs.",
-          "Des suspensions en rotin et en fibres naturelles au-dessus de la table et de la banquette.",
-          "Une chambre avec papier peint à motif de palmiers et linge bleu nuit.",
+        titre: "La demande",
+        paragraphes: [
+          "Une maison de ville existante de 160 m², à La Rochelle, rénovée pour être louée et servir aussi de résidence secondaire.",
+        ],
+      },
+      {
+        titre: "La mission",
+        paragraphes: [
+          "Une mission de conception pour redistribuer les espaces, avec le dépôt d'une déclaration préalable de travaux, puis une sélection de luminaires pour toute la maison et pour les salles d'eau.",
+        ],
+      },
+      {
+        titre: "Le parti pris",
+        paragraphes: [
+          "Révéler ce que la maison cachait. Les murs montrent à nouveau la vieille pierre d'origine. Les sols, autrefois carrelés et sans charme, retrouvent leur splendeur avec un sol en pierre artisanal.",
+          "Des menuiseries en fer forgé reprennent des motifs cintrés, en écho à la petite porte arrondie du salon. Elles modernisent la maison tout en accordant les matériaux entre eux.",
+        ],
+      },
+      {
+        titre: "L'arrondi pour fil conducteur",
+        paragraphes: [
+          "À l'étage, les parquets d'origine retrouvent leur éclat. Pour adoucir les circulations, les cloisons des salles de bains sont dessinées en formes arrondies : la courbe devient le fil conducteur du projet.",
         ],
       },
     ],
-    matieres: ["Rotin", "Laiton", "Terre cuite", "Bois"],
-    photos: p.ermitage,
-    alt: "Projet Ermitage, séjour avec mur orange et bibliothèques sur mesure",
+    matieres: ["Pierre d'origine", "Sol en pierre artisanal", "Fer forgé", "Parquet ancien"],
+    faq: [
+      { q: "Une décoratrice peut-elle déposer une déclaration préalable ?", r: "Oui. Pour cette maison de ville, la mission de conception comprenait le dépôt de la déclaration préalable de travaux." },
+      { q: "Comment rénover une maison ancienne sans effacer son histoire ?", r: "En révélant ce qui existe : ici, la vieille pierre d'origine, les parquets de l'étage et la petite porte arrondie du salon, dont les nouvelles menuiseries reprennent les courbes." },
+      { q: "Une maison destinée à la location mérite-t-elle un projet de décoration ?", r: "Cette maison a été pensée pour la location et pour servir de résidence secondaire : la conception a porté sur la distribution des pièces, les matériaux et les luminaires." },
+    ],
+    partenaires: ["maestro", "kheops", "cedeo", "design17", "rohane"],
+    photos: p.saintclaude,
+    alt: "Maison de ville rénovée à La Rochelle",
   },
   {
-    slug: "projet-beguin",
-    titre: "Projet Beguin",
-    sousTitre: "Papier peint panoramique, salles d'eau vert d'eau et rotin",
-    seoTitre: "Projet Beguin : chambre au papier peint panoramique et salle de bains vert d'eau",
-    description: "Projet Beguin par Anne Boullet Studio : papier peint panoramique en tête de lit, salle de bains en zellige vert d'eau et robinetterie laiton, coin lecture en rotin.",
+    slug: "piece-de-vie-sur-mesure-aytre",
+    titre: "Pièce de vie, Aytré",
+    sousTitre: "Un agencement sur mesure autour d'un insert, dans un séjour de 35 m²",
+    seoTitre: "Agencement sur mesure d'une pièce de vie de 35 m² à Aytré",
+    description:
+      "Pièce de vie de 35 m² à Aytré : agencement sur mesure autour d'un insert, banquette, papier peint panoramique jungle, bibliothèque toute hauteur. Conception et suivi esthétique par Anne Boullet Studio.",
     type: "Particulier",
-    commune: "[Commune]",
-    services: ["decoration-interieure", "planches-d-ambiance"],
-    meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: "Des chambres qui racontent un paysage, des salles d'eau douces et lumineuses.",
+    commune: "Aytré",
+    zone: "la-rochelle",
+    mission: "conception",
+    services: ["agencement-interieur", "decoration-interieure", "suivi-esthetique-de-chantier"],
+    meta: ["Conception et suivi esthétique", "35 m²", "2025"],
+    resume: "Un long séjour traversant, structuré par le conduit d'un insert, entre un coin banquette et une bibliothèque toute hauteur.",
     texte: [
-      { titre: "Le projet", paragraphes: [INFOS] },
+      {
+        titre: "La demande",
+        paragraphes: [
+          "Décorer la pièce de vie de 35 m² d'une maison de famille à Aytré, un séjour traversant tout en longueur. Les clients souhaitaient aussi un insert, pour la chaleur et la convivialité.",
+        ],
+      },
+      {
+        titre: "La mission",
+        paragraphes: [
+          "Une mission de conception en décoration et en agencement, puis un suivi esthétique avec l'agenceur et le cheministe.",
+        ],
+      },
+      {
+        titre: "Le parti pris",
+        paragraphes: [
+          "Le projet s'articule autour du conduit de l'insert. Devenu l'élément central de la pièce, il sépare avec subtilité deux espaces de vie.",
+        ],
+      },
+      {
+        titre: "Deux espaces, un seul séjour",
+        liste: [
+          "D'un côté, un coin banquette enveloppant accueille la salle à manger, sous un papier peint panoramique aux motifs jungle qui donne à l'ensemble un air de théâtre.",
+          "De l'autre, une bibliothèque dessinée sur toute la hauteur exploite le volume et intègre la télévision avec discrétion.",
+          "Au-dessus de la table, un jeu de suspensions rythme la perspective et donne du mouvement à la pièce.",
+        ],
+      },
+    ],
+    matieres: ["Bois", "Papier peint panoramique", "Rotin"],
+    faq: [
+      { q: "Comment aménager un séjour tout en longueur ?", r: "Dans ce séjour traversant de 35 m², le conduit de l'insert sert de pivot : il sépare un coin repas en banquette et un espace salon avec une bibliothèque toute hauteur." },
+      { q: "Comment intégrer la télévision dans une bibliothèque ?", r: "En dessinant la bibliothèque sur mesure, sur toute la hauteur du mur : la télévision y trouve sa place sans dominer la pièce." },
+      { q: "Que comprend le suivi esthétique ?", r: "Sur ce projet, le suivi esthétique s'est fait avec l'agenceur et le cheministe, pour que la réalisation reste fidèle à la conception." },
+    ],
+    partenaires: ["dma", "brossard"],
+    photos: p.bodilis,
+    alt: "Pièce de vie à Aytré, banquette et papier peint panoramique",
+  },
+  {
+    slug: "annexe-de-piscine-les-portes-en-re",
+    titre: "Annexe de piscine, Les Portes-en-Ré",
+    sousTitre: "Une annexe de 35 m² transformée en lieu pour recevoir",
+    seoTitre: "Décoration d'une annexe de piscine aux Portes-en-Ré, Île de Ré",
+    description:
+      "Annexe de piscine de 35 m² aux Portes-en-Ré : conception en décoration et en agencement, shopping list, papier peint panoramique, zellige vert d'eau et rotin. Par Anne Boullet Studio.",
+    type: "Particulier",
+    commune: "Les Portes-en-Ré",
+    zone: "ile-de-re",
+    mission: "conception",
+    services: ["agencement-interieur", "decoration-interieure", "shopping-list"],
+    meta: ["Conception et shopping list", "35 m²", "2026"],
+    resume: "L'annexe de la piscine devient un lieu convivial et chaleureux, pensé pour accueillir des invités.",
+    texte: [
+      {
+        titre: "La demande",
+        paragraphes: [
+          "Rénover l'annexe de 35 m² qui borde la piscine, aux Portes-en-Ré, pour en faire un lieu convivial et chaleureux où recevoir des invités.",
+        ],
+      },
+      {
+        titre: "La mission",
+        paragraphes: ["Une mission de conception en décoration et en agencement, complétée par une shopping list."],
+      },
       {
         titre: "Ce que montrent les photos",
         liste: [
           "Une chambre dont la tête de lit est un papier peint panoramique, paysage de pins et de bord de mer.",
-          "Des suspensions frangées couleur rouille et des coussins velours vert olive.",
-          "Une salle de bains en carreaux vert d'eau, sol en granito, robinetterie et pommeau de douche en laiton brossé.",
-          "Des suspensions en céramique et bois, et des niches en arche.",
+          "Des suspensions frangées couleur rouille et des coussins en velours vert olive.",
+          "Une salle d'eau en carreaux vert d'eau, sol en granito, robinetterie et pommeau de douche en laiton brossé.",
           "Un coin lecture près de la fenêtre : banquette, fauteuils en rotin et coussins aux tons chauds.",
           "Des rangements sur mesure laqués terracotta.",
         ],
       },
     ],
     matieres: ["Rotin", "Laiton", "Granito", "Velours"],
+    faq: [
+      { q: "Comment rendre une annexe de piscine accueillante ?", r: "Aux Portes-en-Ré, l'annexe de 35 m² a été pensée pour recevoir : agencement, décoration et shopping list des meubles et objets." },
+      { q: "Qu'est-ce qu'une shopping list ?", r: "La liste des meubles, luminaires et objets choisis pour le projet, avec leurs références, pour que vous puissiez les commander vous-même." },
+    ],
     photos: p.beguin,
-    alt: "Projet Beguin, chambre au papier peint panoramique",
+    alt: "Annexe de piscine aux Portes-en-Ré, chambre au papier peint panoramique",
   },
   {
-    slug: "projet-saint-claude",
-    titre: "Projet Saint Claude",
-    sousTitre: "Parquet ancien, cheminées de marbre et cuisine vert sauge",
-    seoTitre: "Projet Saint Claude : rénovation d'une maison ancienne, parquet et cuisine sauge",
-    description: "Projet Saint Claude par Anne Boullet Studio : parquet ancien, cheminées en marbre noir, miroirs dorés, carreaux ciment bleus et cuisine vert sauge.",
+    slug: "decoration-maison-esprit-surf-la-rochelle",
+    titre: "Maison de famille esprit surf, La Rochelle",
+    sousTitre: "Redécorer 170 m² aux couleurs d'un passionné de surf",
+    seoTitre: "Décoration d'une maison de 170 m² à La Rochelle, esprit surf et basque",
+    description:
+      "Maison de 170 m² redécorée à La Rochelle pour un passionné de surf : esprit basque, mur terracotta, bois brut, jute, pampa. Conception, sélection et achat de décoration par Anne Boullet Studio.",
     type: "Particulier",
-    commune: "[Commune]",
-    services: ["decoration-interieure", "agencement-interieur"],
-    meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: "Une maison ancienne qui garde ses éléments d'origine, et des pièces d'eau résolument graphiques.",
+    commune: "La Rochelle",
+    zone: "la-rochelle",
+    mission: "conception",
+    services: ["decoration-interieure", "agencement-interieur", "shopping-list"],
+    meta: ["Conception et décoration", "170 m²", "2024"],
+    resume: "Une maison de famille qui porte la passion de son propriétaire : le surf, la mer et un esprit basque chaleureux.",
     texte: [
-      { titre: "Le projet", paragraphes: [INFOS] },
       {
-        titre: "Ce que montrent les photos",
+        titre: "La demande",
+        paragraphes: [
+          "Redécorer une maison de 170 m² à La Rochelle. Elle était en bon état, mais ne correspondait pas tout à fait à l'univers de son propriétaire, passionné de surf, qui souhaitait un esprit basque, chaleureux et familial.",
+        ],
+      },
+      {
+        titre: "La mission",
+        paragraphes: ["Une mission de conception en décoration et en agencement, puis la sélection et l'achat de la décoration."],
+      },
+      {
+        titre: "Le parti pris",
+        paragraphes: [
+          "La passion du surf et de la mer sert de fil conducteur à toute la maison, à travers un mélange de couleurs et de matières naturelles.",
+          "La distribution des pièces reste la même. Le salon gagne de la place sur le séjour, pour prendre du recul face à la cheminée et à la télévision, et accueillir une table basse et des assises.",
+        ],
+      },
+      {
+        titre: "Pièce par pièce",
         liste: [
-          "Des chambres lumineuses sur parquet ancien, avec cheminée en marbre noir et miroir doré.",
-          "Un escalier en bois à balustres.",
-          "Une douche habillée de carreaux ciment à motif géométrique bleu marine.",
-          "Une cuisine aux façades vert sauge, plan de travail clair et robinetterie laiton.",
-          "Des suspensions en tissu et en rotin, et des miroirs aux formes organiques.",
+          "Le salon : un mur terracotta, d'aspect légèrement brique, enveloppe la cheminée. La même teinte revient en fond d'étagère dans le coin détente, en clin d'œil aux maisons basques.",
+          "Le canapé blanc répond à la table basse en bois brut et aux assises assorties.",
+          "La salle à manger : un mobilier en bois brut et un banc, pour une ambiance simple.",
+          "Une planche de surf et des tiges de pampa complètent le décor.",
+        ],
+      },
+      {
+        titre: "Le résultat",
+        paragraphes: [
+          "Des tons clairs et des matières naturelles, bois et jute, pour une ambiance dépaysante et épurée, propice à la détente. Les touches de couleur aux murs apportent la chaleur, et la maison de famille gagne en authenticité.",
         ],
       },
     ],
-    matieres: ["Parquet ancien", "Marbre", "Carreaux ciment", "Laiton"],
-    photos: p.saintclaude,
-    alt: "Projet Saint Claude, chambre sur parquet ancien",
-  },
-  {
-    slug: "projet-bodilis",
-    titre: "Projet Bodilis",
-    sousTitre: "Un papier peint jungle et un meuble bibliothèque sur mesure",
-    seoTitre: "Projet Bodilis : papier peint panoramique et bibliothèque sur mesure",
-    description: "Projet Bodilis par Anne Boullet Studio : papier peint panoramique jungle, meuble bibliothèque et télévision sur mesure, banquette en bois et suspensions en rotin.",
-    type: "Particulier",
-    commune: "[Commune]",
-    mission: "decoration",
-    services: ["decoration-interieure", "agencement-interieur"],
-    meta: ["[Type de lieu]", "[Commune]", "[Surface]"],
-    resume: "Une pièce de vie rythmée par un grand papier peint panoramique et un meuble sur mesure.",
-    texte: [
-      { titre: "Le projet", paragraphes: [INFOS] },
-      {
-        titre: "Ce que montrent les photos",
-        liste: [
-          "Un papier peint panoramique, scène de jungle aux tons doux, sur toute la hauteur du mur.",
-          "Un meuble bibliothèque et télévision sur mesure, fond vert, étagères en escalier.",
-          "Une banquette en bois clair avec rangement pour les bûches, sous le papier peint.",
-          "Des suspensions en rotin au-dessus de la table.",
-          "Des coussins terracotta, blancs et rayés vert.",
-        ],
-      },
+    matieres: ["Bois brut", "Jute", "Pampa", "Rotin"],
+    faq: [
+      { q: "Est-il possible de redécorer une maison sans travaux ?", r: "Oui. Dans cette maison de 170 m², la distribution est restée la même : la décoration, les couleurs et le mobilier ont suffi à lui donner l'univers de son propriétaire." },
+      { q: "Comment créer une décoration esprit surf sans tomber dans le cliché ?", r: "En partant des matières et des couleurs : bois brut, jute, tons clairs et une teinte terracotta inspirée des maisons basques. La planche de surf et la pampa viennent ensuite, par touches." },
+      { q: "Vous occupez-vous aussi des achats ?", r: "Sur ce projet, la mission comprenait la sélection et l'achat de la décoration." },
     ],
-    matieres: ["Rotin", "Bois clair", "Papier peint panoramique"],
-    photos: p.bodilis,
-    alt: "Projet Bodilis, papier peint panoramique et banquette",
+    photos: p.ermitage,
+    alt: "Maison de famille esprit surf à La Rochelle, séjour au mur terracotta",
   },
 ];
 

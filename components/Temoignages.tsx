@@ -20,7 +20,7 @@ const avis = [
     nom: "Guirec T.",
     contexte: "Rénovation d'une maison de 1650",
     photo: "/avis/avis-2.jpg",
-    alt: "Chambre lumineuse avec cheminée, projet Saint Claude",
+    alt: "Chambre lumineuse avec cheminée, maison de ville à La Rochelle",
   },
   {
     texte:
@@ -36,7 +36,7 @@ const avis = [
     nom: "Julia B.",
     contexte: "Projet de décoration",
     photo: "/avis/avis-4.jpg",
-    alt: "Banquette et papier peint panoramique, projet Bodilis",
+    alt: "Banquette et papier peint panoramique, pièce de vie à Aytré",
   },
   {
     texte:
@@ -44,7 +44,7 @@ const avis = [
     nom: "Clément W.",
     contexte: "Deux projets de rénovation",
     photo: "/avis/avis-5.jpg",
-    alt: "Bibliothèque sur mur orange, projet Ermitage",
+    alt: "Mur terracotta et bibliothèque, maison esprit surf à La Rochelle",
   },
   {
     texte:
@@ -52,7 +52,7 @@ const avis = [
     nom: "Isabelle A. de S.",
     contexte: "Rénovation d'une maison du XIXᵉ siècle",
     photo: "/avis/avis-6.jpg",
-    alt: "Fauteuils en rotin près de la fenêtre, projet Beguin",
+    alt: "Fauteuils en rotin près de la fenêtre, annexe aux Portes-en-Ré",
   },
 ];
 
