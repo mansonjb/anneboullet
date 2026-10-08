@@ -577,3 +577,5 @@ html{scroll-behavior:smooth}
 .partners.compact .serif{font-size:18px}
 .related .pro2-kicker{margin-bottom:14px}
 @media (max-width:960px){.partners,.partners.compact{grid-template-columns:1fr 1fr}}
+.duo-portrait{grid-template-columns:minmax(0,400px) minmax(0,1fr)}
+@media (max-width:960px){.duo-portrait{grid-template-columns:minmax(0,1fr)}.duo-portrait figure{max-width:420px}}

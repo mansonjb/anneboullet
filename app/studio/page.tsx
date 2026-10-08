@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Crumbs, Cta, PageHead } from "@/components/blocks";
 import { Ph } from "@/components/ui";
 import { getProjet, type Projet } from "@/data/projets";
@@ -31,11 +32,12 @@ export default function Studio() {
         }
       />
 
-      <section className="sec duo" style={{ paddingTop: 72 }}>
+      <section className="sec duo duo-portrait" style={{ paddingTop: 72 }}>
         <figure>
-          <div className="ph r-lg portrait-ph" style={{ aspectRatio: "4 / 5" }}>
-            <span className="serif">[Portrait d&apos;Anne à venir]</span>
+          <div className="ph r-lg" style={{ aspectRatio: "4 / 5" }}>
+            <Image src="/studio/anne-boullet.jpg" alt="Anne Boullet, décoratrice d'intérieur à La Rochelle" fill sizes="(max-width: 960px) 100vw, 400px" preload unoptimized />
           </div>
+          <figcaption className="cap">Anne Boullet</figcaption>
         </figure>
         <div className="zone-txt">
           <p>
