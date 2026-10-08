@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Temoignages from "@/components/Temoignages";
 import { Arrow, Logo, Ph } from "@/components/ui";
 import { projets } from "@/data/projets";
 
@@ -81,7 +82,7 @@ export default function Home() {
                 Trois façons <span className="mute">de travailler ensemble</span>
               </h2>
             </div>
-            <div className="cards">
+            <div className="cards missions">
               <div className="card">
                 <h3 className="serif">
                   <i className="dot" />
@@ -91,7 +92,7 @@ export default function Home() {
               </div>
               <div className="card on">
                 <h3 className="serif">
-                  <i style={{ background: "#fff" }} />
+                  <i className="dot" />
                   Conception
                 </h3>
                 <p>Plans, choix des matériaux, du mobilier et des luminaires : un projet complet, dessiné avant les travaux.</p>
@@ -159,28 +160,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="temo">
-              <div>
-                <blockquote>
-                  <p className="serif">
-                    « [Citation d&apos;un client, avec son accord : deux ou trois phrases sur l&apos;écoute, le résultat, le
-                    respect du budget et des délais.] »
-                  </p>
-                </blockquote>
-                <div className="who">
-                  <div>
-                    <strong>[Prénom N.]</strong>
-                    <span>[Maison ou appartement], [commune]</span>
-                  </div>
-                  <div className="who-nav">
-                    <button className="circ" type="button" aria-label="Témoignage précédent">
-                      <Arrow size={14} back />
-                    </button>
-                    <button className="circ on" type="button" aria-label="Témoignage suivant">
-                      <Arrow size={14} />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <Temoignages />
               <figure>
                 <Ph
                   photo={ermitage.photos[1]}

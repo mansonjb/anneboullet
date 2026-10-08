@@ -222,3 +222,37 @@ html{scroll-behavior:smooth}
 .circ svg{stroke:#2A2622}
 .circ.on svg{stroke:#fff}
 .field select{appearance:auto}
+
+/* missions : la carte survolée prend la couleur, Conception par défaut */
+.missions .card{transition:background-color .35s ease,border-color .35s ease,transform .35s ease,box-shadow .35s ease}
+.missions .card h3,.missions .card p{transition:color .35s ease}
+.missions .card .dot{transition:background-color .35s ease}
+.missions .card.on .dot{background:#fff}
+.missions:hover .card.on:not(:hover){background:#F7F5F1;border-color:#EEEAE3}
+.missions:hover .card.on:not(:hover) h3{color:#2A2622}
+.missions:hover .card.on:not(:hover) p{color:#4F4840}
+.missions:hover .card.on:not(:hover) .dot{background:var(--accent)}
+.missions .card:hover{background:var(--surface);border-color:var(--surface);transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(42,38,34,.45)}
+.missions .card:hover h3,.missions .card:hover p{color:#fff}
+.missions .card:hover .dot{background:#fff}
+.steps li{transition:background-color .3s ease,border-color .3s ease,transform .3s ease}
+.steps li:hover{background:var(--tint);border-color:var(--tint);transform:translateY(-3px)}
+.steps h4{transition:color .3s ease}
+.steps li:hover h4{color:var(--accent)}
+
+/* « Vous êtes » : pastilles pleines au lieu des boutons radio */
+.seg label{position:relative;cursor:pointer;transition:background-color .25s ease,border-color .25s ease,color .25s ease;padding:0 22px}
+.seg label:hover{border-color:var(--accent)}
+.seg input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.seg label:has(input:checked){background:var(--surface);border-color:var(--surface);color:#fff}
+.seg label:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+
+/* avis */
+.temo blockquote p.long{font-size:24px;line-height:1.35}
+.temo-q{animation:fadeq .45s ease}
+@keyframes fadeq{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.who-nav{align-items:center}
+.who-count{font-size:13px;color:#655D54;margin-right:6px;font-variant-numeric:tabular-nums}
+@media (max-width:960px){.temo blockquote p.long{font-size:19px}}
+@media (prefers-reduced-motion:reduce){.temo-q{animation:none}.missions .card:hover,.steps li:hover{transform:none}}
+.temo .who{max-width:540px}
