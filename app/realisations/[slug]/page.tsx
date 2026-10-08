@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Chips, Crumbs, Cta, FaqBlock, JsonLd, Prose } from "@/components/blocks";
 import { Arrow, Ph } from "@/components/ui";
+import Partenaires from "@/components/Partenaires";
 import { getProjet, projets, src } from "@/data/projets";
 import { missions, secteurs, services, zones } from "@/data/site";
 
@@ -105,14 +106,7 @@ export default async function Realisation({ params }: PageProps<"/realisations/[
                 <Arrow size={14} />
               </a>
             )}
-            {p.partenaires && (
-              <div>
-                <span>Artisans</span>
-                {p.partenaires.join(", ")}
-              </div>
-            )}
           </div>
-          <Chips titre="Savoir-faire mobilisés" items={svc.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
         </aside>
       </div>
 
@@ -125,6 +119,19 @@ export default async function Realisation({ params }: PageProps<"/realisations/[
       </section>
 
       {p.faq && <FaqBlock items={p.faq} titre={<>Questions <span className="mute">sur ce projet</span></>} />}
+
+      {p.partenaires && (
+        <section className="related">
+          <p className="pro2-kicker">Artisans et partenaires du projet</p>
+          <Partenaires cles={p.partenaires} compact />
+        </section>
+      )}
+
+      {svc.length > 0 && (
+        <section className="related" style={{ paddingTop: 48 }}>
+          <Chips titre="Savoir-faire mobilisés sur ce projet" items={svc.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
+        </section>
+      )}
 
       <section className="next-p">
         <p className="cap" style={{ marginBottom: 12 }}>

@@ -549,3 +549,31 @@ html{scroll-behavior:smooth}
 @media (max-width:960px){.p-body{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:44px}.p-side{position:static}.prose h2{font-size:25px}.prose p{font-size:16px}.p-sub{font-size:20px}.ft-cols{grid-template-columns:1fr 1fr}}
 .sec-top-wide .h2 span{display:inline}
 .sec-top-wide .sec-lede{max-width:52em}
+
+/* ================================================================
+   RÈGLE OBLIGATOIRE : le texte prend toute la largeur de la page.
+   Aucune colonne de texte étroite. Ne pas réintroduire de max-width
+   sur les paragraphes, chapôs, listes ou FAQ.
+   ================================================================ */
+.h1,.lede,.duo p.body,.pro p,.p-head,.sec-lede,.pro2-lede,.cta-band p,.note,
+.acc-list,.acc-item p,.faq-g h2,.legal,.prose p,.prose ul,.prose-center,
+.sec-top-wide .sec-lede,.zone-txt p,.check,.mission .m-lede{max-width:none}
+.p-body{grid-template-columns:minmax(0,1fr);gap:48px}
+.p-side{position:static;flex-direction:row;flex-wrap:wrap;gap:32px 48px;align-items:flex-start}
+.p-side .p-links{flex-direction:row;flex-wrap:wrap}
+.related{padding-top:96px}
+.related .chips{text-align:left}
+
+/* partenaires */
+.partners{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.partners a,.partners div{position:relative;display:flex;flex-direction:column;gap:4px;height:100%;box-sizing:border-box;padding:22px 22px 20px;border-radius:14px;background:#F7F5F1;border:1px solid #EEEAE3;text-decoration:none;color:#2A2622;transition:background-color .3s,color .3s,transform .3s}
+.partners .serif{font-size:21px;line-height:1.2}
+.partners span:not(.serif){font-size:13px;color:#655D54;transition:color .3s}
+.partners a svg{position:absolute;top:22px;right:20px;stroke:var(--accent);transition:stroke .3s,transform .3s}
+.partners a:hover{background:var(--surface);color:#fff;transform:translateY(-3px)}
+.partners a:hover span:not(.serif){color:rgba(255,255,255,.8)}
+.partners a:hover svg{stroke:#fff;transform:translate(2px,-2px) rotate(-45deg)}
+.partners.compact{grid-template-columns:repeat(4,minmax(0,1fr))}
+.partners.compact .serif{font-size:18px}
+.related .pro2-kicker{margin-bottom:14px}
+@media (max-width:960px){.partners,.partners.compact{grid-template-columns:1fr 1fr}}

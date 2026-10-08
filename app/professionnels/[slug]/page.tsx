@@ -58,24 +58,24 @@ export default async function SecteurPage({ params }: PageProps<"/professionnels
         </figure>
       </section>
 
-      <section className="sec p-body p-body-solo">
+      <section className="sec">
         <Prose sections={s.sections} />
-        <aside className="p-side">
-          <Chips
-            titre="Savoir-faire mobilisés"
-            items={[
-              { href: "/services/agencement-interieur", label: "Agencement intérieur" },
-              { href: "/services/signaletique", label: "Signalétique" },
-              { href: "/services/decoration-interieure", label: "Décoration intérieure" },
-              { href: "/services/plans-de-principe-et-3d", label: "Plans de principe et 3D" },
-            ]}
-          />
-        </aside>
       </section>
 
       {s.projet && <ProjetsLies slugs={[s.projet]} />}
 
       <FaqBlock items={s.faq} titre={<>Questions <span className="mute">des professionnels</span></>} />
+      <section className="related">
+        <Chips
+          titre="Savoir-faire mobilisés"
+          items={[
+            { href: "/services/agencement-interieur", label: "Agencement intérieur" },
+            { href: "/services/signaletique", label: "Signalétique" },
+            { href: "/services/decoration-interieure", label: "Décoration intérieure" },
+            { href: "/services/plans-de-principe-et-3d", label: "Plans de principe et 3D" },
+          ]}
+          />
+      </section>
       <Cta titre="Parlons de votre lieu" texte="Un premier échange pour comprendre votre activité, vos équipes et vos contraintes." />
     </>
   );

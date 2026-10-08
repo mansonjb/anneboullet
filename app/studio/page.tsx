@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Crumbs, Cta, PageHead } from "@/components/blocks";
 import { Ph } from "@/components/ui";
 import { getProjet, type Projet } from "@/data/projets";
+import { partenairesStudio } from "@/data/site";
+import Partenaires from "@/components/Partenaires";
 
 export const metadata: Metadata = {
   title: "Le studio · Anne Boullet, décoratrice d'intérieur",
@@ -77,8 +79,9 @@ export default function Studio() {
           <h2 className="h2 serif">
             Artisans <span className="mute">et partenaires</span>
           </h2>
-          <p className="sec-lede">[Liste en cours de validation auprès des artisans et fournisseurs.]</p>
+          <p className="sec-lede">Des artisans et des fournisseurs de la région, avec qui je travaille en confiance sur les chantiers.</p>
         </div>
+        <Partenaires cles={partenairesStudio} />
       </section>
       <Cta />
     </>

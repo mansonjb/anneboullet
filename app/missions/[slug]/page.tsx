@@ -67,11 +67,8 @@ export default async function MissionPage({ params }: PageProps<"/missions/[slug
         )}
       </section>
 
-      <section className="sec p-body p-body-solo">
+      <section className="sec">
         <Prose sections={m.sections} />
-        <aside className="p-side">
-          <Chips titre="Savoir-faire liés" items={svc.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
-        </aside>
       </section>
 
       <section className="sec">
@@ -113,6 +110,9 @@ export default async function MissionPage({ params }: PageProps<"/missions/[slug
             </a>
           ))}
         </div>
+      </section>
+      <section className="related">
+        <Chips titre="Savoir-faire liés à cette mission" items={svc.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
       </section>
       <Cta />
     </>

@@ -18,7 +18,7 @@ export type Projet = {
   texte: Section[];
   matieres?: string[];
   faq?: QR[];
-  partenaires?: string[];
+  partenaires?: string[]; // clés de data/site.ts > partenaires
   photos: Photo[];
   alt: string;
   mission?: string;
@@ -88,7 +88,7 @@ export const projets: Projet[] = [
       { q: "Qui dépose le permis de construire pour une extension ?", r: "Pour cette extension de 80 m², le permis de construire a été porté par un architecte partenaire. Je travaille la conception intérieure en lien avec lui." },
       { q: "Peut-on garder ses meubles dans un projet de rénovation ?", r: "Oui. La redistribution de cette maison a été pensée à partir du mobilier que la famille souhaitait conserver." },
     ],
-    partenaires: ["[Liste des artisans à confirmer]"],
+    partenaires: ["maestro", "concas", "kheops", "aubry", "cedeo", "design17", "dma", "aps"],
     photos: p.oleron,
     alt: "Maison de famille à Saint-Denis-d'Oléron",
   },
@@ -147,7 +147,7 @@ export const projets: Projet[] = [
       { q: "Faut-il une autorisation pour modifier une façade sur l'Île de Ré ?", r: "Oui, la modification d'une façade demande au minimum une déclaration préalable. Pour cette maison, le studio l'a déposée en mairie." },
       { q: "Comment rendre une résidence secondaire facile à louer ?", r: "En soignant les chambres et les salles d'eau, en choisissant des matériaux faciles d'entretien et en dimensionnant le mobilier pour accueillir plusieurs personnes, comme dans cette maison." },
     ],
-    partenaires: ["[Liste des artisans à confirmer]"],
+    partenaires: ["maestro", "kheops", "aubry", "cedeo", "design17", "dma", "pauzat", "labrouche"],
     photos: p.parpaillaud,
     alt: "Maison de village à Saint-Clément-des-Baleines, Île de Ré",
   },

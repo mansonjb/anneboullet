@@ -685,7 +685,7 @@ export const faq: { groupe: string; items: Faq[] }[] = [
     items: [
       { q: "Jusqu'où va votre accompagnement ?", r: "Du simple rendez-vous conseil au projet complet : plans de principe, choix des matières et du mobilier, puis un suivi esthétique du chantier jusqu'à la réception." },
       { q: "Faites-vous uniquement de la conception, ou suivez-vous aussi les travaux ?", r: "Je conçois le projet puis j'assure un suivi esthétique du chantier. La coordination des travaux est confiée à un maître d'œuvre pour les projets importants." },
-      { q: "Travaillez-vous avec des artisans que vous recommandez ?", r: "Oui, je travaille avec des artisans locaux de confiance. [Liste en cours de validation]" },
+      { q: "Travaillez-vous avec des artisans que vous recommandez ?", r: "Oui, je travaille avec des artisans et des fournisseurs de la région, comme CB Sols pour les sols, Design 17 pour les cuisines ou Ryser pour les peintures." },
       { q: "Pouvez-vous déposer un permis de construire ?", r: "Les permis de construire sont réalisés avec un architecte partenaire. Je peux déposer moi-même une déclaration préalable." },
       { q: "Décoratrice ou architecte d'intérieur : quelle différence ?", r: "Je suis décoratrice d'intérieur : j'interviens sur l'agencement, les matières, les couleurs et le mobilier, avec des plans de principe. Les travaux soumis à permis de construire sont portés par un architecte partenaire." },
       { q: "Mon projet est déjà commencé, pouvez-vous intervenir ?", r: "[Réponse d'Anne à venir]" },
@@ -710,3 +710,28 @@ export const faq: { groupe: string; items: Faq[] }[] = [
     ],
   },
 ];
+
+/* ------------------------------------------------------------------ */
+/* Artisans et partenaires (liste transmise par Anne, à valider)       */
+/* Liens vérifiés le 08/10/2026 ; sans lien = site non trouvé.         */
+/* ------------------------------------------------------------------ */
+
+export type Partenaire = { nom: string; metier: string; url?: string };
+
+export const partenaires: Record<string, Partenaire> = {
+  maestro: { nom: "Travaux Maestro", metier: "Travaux de rénovation" },
+  cbsols: { nom: "CB Sols", metier: "Revêtements de sol", url: "https://cbsols.fr" },
+  design17: { nom: "Design 17", metier: "Cuisiniste, La Rochelle", url: "https://www.design17.fr" },
+  dma: { nom: "Décoration Matériaux Atlantique", metier: "Poêles et inserts" },
+  ryser: { nom: "Ryser", metier: "Peintures et conseil couleur, La Rochelle", url: "https://ryser.fr" },
+  cedeo: { nom: "Cedeo", metier: "Sanitaire et salle de bains", url: "https://www.cedeo.fr" },
+  aubade: { nom: "Aubade", metier: "Salle de bains" },
+  labrouche: { nom: "Labrouche Antiquaire", metier: "Matériaux anciens, Aytré" },
+  concas: { nom: "Samuel Concas", metier: "Architecte" },
+  kheops: { nom: "Kheops création", metier: "[Métier à préciser]" },
+  aubry: { nom: "François Aubry Menuiserie", metier: "Menuiserie" },
+  pauzat: { nom: "Frédy Pauzat", metier: "Travertin" },
+  aps: { nom: "APS Piscine", metier: "Piscine" },
+};
+
+export const partenairesStudio = ["maestro", "cbsols", "design17", "dma", "ryser", "cedeo", "aubade", "labrouche"];

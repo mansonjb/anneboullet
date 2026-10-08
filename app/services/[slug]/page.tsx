@@ -37,16 +37,16 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       <Crumbs items={[{ href: "/services", label: "Savoir-faire" }, { label: s.nom }]} />
       <PageHead kicker="Savoir-faire" h1={s.h1} lede={s.lede} />
 
-      <section className="sec p-body p-body-solo" style={{ paddingTop: 72 }}>
+      <section className="sec" style={{ paddingTop: 72 }}>
         <Prose sections={s.sections} />
-        <aside className="p-side">
-          {mission && <Chips titre="Inclus dans la mission" items={[{ href: `/missions/${mission.slug}`, label: mission.titre }]} />}
-          <Chips titre="Autres savoir-faire" items={autres.map((x) => ({ href: `/services/${x.slug}`, label: x.nom }))} />
-        </aside>
       </section>
 
       <ProjetsLies slugs={s.projets} titre={s.projets.length > 1 ? "Des projets en exemple" : "Un projet en exemple"} />
       <FaqBlock items={s.faq} />
+      <section className="related p-side">
+        {mission && <Chips titre="Inclus dans la mission" items={[{ href: `/missions/${mission.slug}`, label: mission.titre }]} />}
+        <Chips titre="Autres savoir-faire" items={autres.map((x) => ({ href: `/services/${x.slug}`, label: x.nom }))} />
+      </section>
       <Cta />
     </>
   );

@@ -230,7 +230,7 @@ export default function Home() {
                 <h2 className="h2 serif">
                   Parlons de <span className="mute">votre projet</span>
                 </h2>
-                <p style={{ color: "#4F4840", margin: "20px 0 0", maxWidth: "26em" }}>
+                <p style={{ color: "#4F4840", margin: "20px 0 0" }}>
                   Quelques lignes suffisent. Anne vous rappelle sous [délai] pour un premier échange, puis un rendez-vous
                   sur place.
                 </p>
