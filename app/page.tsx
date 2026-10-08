@@ -5,6 +5,38 @@ import { projets } from "@/data/projets";
 
 const [oleron, ermitage, beguin] = projets;
 
+const missions = [
+  {
+    n: "01",
+    titre: "Conseils",
+    lede: "Un regard extérieur, le temps d'une visite chez vous.",
+    recu: ["Un rendez-vous d'1 h 30 sur place, nuancier et échantillons en main", "Un compte rendu écrit : points clés, astuces, croquis"],
+    pour: "avancer par vous-même avec les bonnes pistes.",
+  },
+  {
+    n: "02",
+    titre: "Conception",
+    lede: "Le projet entièrement dessiné, avant les travaux.",
+    recu: ["Plans de principe et d'implantation", "Planches couleurs et matériaux", "Perspectives 3D et fourchettes budgétaires"],
+    pour: "une rénovation, une extension ou une redistribution des pièces.",
+  },
+  {
+    n: "03",
+    titre: "Décoration",
+    lede: "Les bons objets, au bon endroit.",
+    recu: ["La sélection du mobilier, des luminaires et des textiles", "Une shopping list prête à commander"],
+    pour: "habiller un lieu déjà agencé.",
+  },
+];
+
+const etapes = [
+  { titre: "Premier contact", texte: "Un échange pour comprendre votre projet et vos envies." },
+  { titre: "Visite et devis", texte: "Une rencontre sur place, puis un devis accompagné d'un débriefing écrit." },
+  { titre: "Carnet de projet", texte: "Un questionnaire sur votre façon de vivre et le relevé des cotes." },
+  { titre: "Esquisse puis projet", texte: "Avant-projet sommaire, puis détaillé : plans de principe, matières, 3D." },
+  { titre: "Suivi et réception", texte: "Un suivi esthétique du chantier, jusqu'à la réception." },
+];
+
 export default function Home() {
   return (
     <div className="page">
@@ -81,52 +113,41 @@ export default function Home() {
               <h2 className="h2 serif">
                 Trois façons <span className="mute">de travailler ensemble</span>
               </h2>
+              <p className="sec-lede">Du simple regard extérieur au projet complet : vous choisissez le niveau d&apos;accompagnement.</p>
             </div>
-            <div className="cards missions">
-              <div className="card">
-                <h3 className="serif">
-                  <i className="dot" />
-                  Conseils
-                </h3>
-                <p>Une visite chez vous et des pistes concrètes : couleurs, matières, agencement, pour avancer par vous-même.</p>
-              </div>
-              <div className="card on">
-                <h3 className="serif">
-                  <i className="dot" />
-                  Conception
-                </h3>
-                <p>Plans, choix des matériaux, du mobilier et des luminaires : un projet complet, dessiné avant les travaux.</p>
-              </div>
-              <div className="card">
-                <h3 className="serif">
-                  <i className="dot" />
-                  Décoration
-                </h3>
-                <p>Le choix et la mise en place du mobilier, des textiles et des objets, jusqu&apos;à la remise des clés.</p>
-              </div>
+            <div className="missions">
+              {missions.map((m) => (
+                <article className="mission" key={m.titre}>
+                  <p className="m-n">Mission {m.n}</p>
+                  <h3 className="serif">{m.titre}</h3>
+                  <p className="m-lede">{m.lede}</p>
+                  <p className="m-lbl">Vous recevez</p>
+                  <ul>
+                    {m.recu.map((r) => (
+                      <li key={r}>{r}</li>
+                    ))}
+                  </ul>
+                  <p className="m-pour">
+                    <span>Idéal pour</span> {m.pour}
+                  </p>
+                </article>
+              ))}
             </div>
-            <ol className="steps">
-              <li>
-                <h4 className="serif">La rencontre</h4>
-                <p>Chez vous, pour comprendre le lieu, vos habitudes et votre budget.</p>
-              </li>
-              <li>
-                <h4 className="serif">L&apos;esquisse</h4>
-                <p>Une première direction : ambiance, couleurs, matières.</p>
-              </li>
-              <li>
-                <h4 className="serif">Le projet</h4>
-                <p>Plans, mobilier, matériaux et chiffrage.</p>
-              </li>
-              <li>
-                <h4 className="serif">Le chantier</h4>
-                <p>Le lien avec les artisans et le suivi.</p>
-              </li>
-              <li>
-                <h4 className="serif">La réception</h4>
-                <p>La mise en place finale et les derniers ajustements.</p>
-              </li>
-            </ol>
+
+            <div className="methode">
+              <h3 className="serif methode-t">
+                Un projet, <span className="mute">en cinq temps</span>
+              </h3>
+              <ol className="frise">
+                {etapes.map((s, k) => (
+                  <li key={s.titre}>
+                    <span className="f-n">{k + 1}</span>
+                    <h4 className="serif">{s.titre}</h4>
+                    <p>{s.texte}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </section>
 
           <section className="sec" id="realisations">
@@ -161,14 +182,6 @@ export default function Home() {
             </div>
             <div className="temo">
               <Temoignages />
-              <figure>
-                <Ph
-                  photo={ermitage.photos[1]}
-                  ratio="1 / 1"
-                  sizes="(max-width: 960px) 100vw, 540px"
-                  alt="Projet Ermitage, banquette dans une niche orange"
-                />
-              </figure>
             </div>
           </section>
 

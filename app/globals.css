@@ -256,3 +256,50 @@ html{scroll-behavior:smooth}
 @media (max-width:960px){.temo blockquote p.long{font-size:19px}}
 @media (prefers-reduced-motion:reduce){.temo-q{animation:none}.missions .card:hover,.steps li:hover{transform:none}}
 .temo .who{max-width:540px}
+
+/* === Missions v2 : 3 missions lisibles + frise méthode === */
+.sec-lede{margin:18px 0 0;color:#4F4840;max-width:34em;font-size:17px}
+.missions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mission{background:#F7F5F1;border:1px solid #EEEAE3;border-radius:14px;padding:32px 30px 30px;display:flex;flex-direction:column;transition:background-color .35s ease,border-color .35s ease,transform .35s ease,box-shadow .35s ease}
+.mission .m-n{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);transition:color .35s ease}
+.mission h3{font-size:34px;line-height:1.1;margin:10px 0 10px}
+.mission .m-lede{margin:0 0 26px;color:#4F4840;font-size:16px;transition:color .35s ease}
+.mission .m-lbl{margin:0 0 10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#655D54;padding-top:20px;border-top:1px solid #E4DDD2;transition:color .35s ease,border-color .35s ease}
+.mission ul{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-direction:column;gap:8px}
+.mission li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:#2A2622;transition:color .35s ease}
+.mission li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--accent);transition:background-color .35s ease}
+.mission .m-pour{margin:auto 0 0;font-size:14px;color:#4F4840;transition:color .35s ease}
+.mission .m-pour span{font-weight:500;color:#2A2622;transition:color .35s ease}
+.mission:hover{background:var(--surface);border-color:var(--surface);transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(42,38,34,.5)}
+.mission:hover h3,.mission:hover li,.mission:hover .m-pour span{color:#fff}
+.mission:hover .m-n,.mission:hover .m-lede,.mission:hover .m-lbl,.mission:hover .m-pour{color:rgba(255,255,255,.82)}
+.mission:hover .m-lbl{border-color:rgba(255,255,255,.25)}
+.mission:hover li::before{background:#fff}
+
+.methode{margin-top:88px}
+.methode-t{font-size:34px;line-height:1.1;margin:0 0 40px;text-align:center}
+.frise{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;position:relative}
+.frise::before{content:"";position:absolute;left:10%;right:10%;top:22px;height:1px;background:#DDD4C8}
+.frise li{position:relative;text-align:center;padding:0 6px}
+.frise .f-n{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--accent);color:var(--accent);font-family:var(--font-newsreader),Georgia,serif;font-size:19px;transition:background-color .3s ease,color .3s ease}
+.frise li:hover .f-n{background:var(--surface);border-color:var(--surface);color:#fff}
+.frise h4{font-size:20px;font-weight:400;margin:18px 0 6px}
+.frise p{margin:0;font-size:14px;line-height:1.5;color:#4F4840}
+
+/* photo des avis en fondu */
+.temo-ph{aspect-ratio:1 / 1}
+.temo-ph img{opacity:0;transition:opacity .6s ease}
+.temo-ph img.on{opacity:1}
+
+@media (max-width:960px){
+  .missions{grid-template-columns:minmax(0,1fr)}
+  .mission h3{font-size:30px}
+  .methode{margin-top:64px}
+  .methode-t{font-size:28px;text-align:left}
+  .frise{grid-template-columns:minmax(0,1fr);gap:0}
+  .frise::before{left:22px;right:auto;top:22px;bottom:70px;width:1px;height:auto}
+  .frise li{display:grid;grid-template-columns:44px 1fr;column-gap:18px;text-align:left;padding:0 0 26px}
+  .frise .f-n{grid-row:span 2}
+  .frise h4{margin:9px 0 4px}
+}
+@media (prefers-reduced-motion:reduce){.mission:hover{transform:none}.temo-ph img{transition:none}}
