@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Arrow } from "./ui";
 
-// Avis Google réels (extraits, coupures signalées par […], coquilles corrigées).
+// Avis Google réels (extraits, coupures signalées par, coquilles corrigées).
 const avis = [
   {
     texte:
-      "Ce que j'ai le plus apprécié, ce sont les étapes pour parvenir au projet final : du questionnaire sur nos habitudes de vie jusqu'à l'avant-projet détaillé et la shopping list. […] J'ai totalement eu confiance et ne regrette pas l'accompagnement du début à la fin.",
+      "Ce que j'ai le plus apprécié, ce sont les étapes pour parvenir au projet final : du questionnaire sur nos habitudes de vie jusqu'à l'avant-projet détaillé et la shopping list. J'ai totalement eu confiance et ne regrette pas l'accompagnement du début à la fin.",
     nom: "Isabelle A.",
     contexte: "Agrandissement d'une maison de vacances",
     photo: "/avis/avis-1.jpg",
@@ -16,7 +16,7 @@ const avis = [
   },
   {
     texte:
-      "Après avoir acheté une maison datant de 1650, à totalement rénover, Anne a été un atout essentiel pour la rendre fonctionnelle et esthétique. Le résultat dépasse mes espérances. […] La famille s'y sent bien.",
+      "Après avoir acheté une maison datant de 1650, à totalement rénover, Anne a été un atout essentiel pour la rendre fonctionnelle et esthétique. Le résultat dépasse mes espérances. La famille s'y sent bien.",
     nom: "Guirec T.",
     contexte: "Rénovation d'une maison de 1650",
     photo: "/avis/avis-2.jpg",
