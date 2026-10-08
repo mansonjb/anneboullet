@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import Temoignages from "@/components/Temoignages";
 import { Arrow, Logo, Ph } from "@/components/ui";
@@ -27,6 +28,15 @@ const missions = [
     recu: ["La sélection du mobilier, des luminaires et des textiles", "Une shopping list prête à commander"],
     pour: "habiller un lieu déjà agencé.",
   },
+];
+
+const matieres = [
+  { nom: "Bois", img: "bois", lieu: "Charpente apparente, Saint-Denis-d'Oléron" },
+  { nom: "Fibres naturelles", img: "rotin", lieu: "Suspensions en rotin, Saint-Denis-d'Oléron" },
+  { nom: "Textiles", img: "lin", lieu: "Coussins et tissus imprimés, Saint-Denis-d'Oléron" },
+  { nom: "Zellige", img: "zellige", lieu: "Douche, Saint-Clément-des-Baleines" },
+  { nom: "Pierre", img: "pierre", lieu: "Mur en pierre, Saint-Clément-des-Baleines" },
+  { nom: "Teintes chaudes", img: "terre", lieu: "Tête de lit, Saint-Clément-des-Baleines" },
 ];
 
 const etapes = [
@@ -185,25 +195,25 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="sec">
+          <section className="sec" id="matieres">
             <div className="sec-top">
               <h2 className="h2 serif">
-                Quelques repères <span className="mute">avant de se rencontrer</span>
+                Les matières <span className="mute">qui reviennent</span>
               </h2>
+              <p className="sec-lede">Bois, fibres naturelles, zellige, pierre : des matières vraies, qui vieillissent bien avec la maison.</p>
             </div>
-            <div className="cards">
-              <div className="stat">
-                <b>1 h</b>
-                <span>de route autour de La Rochelle, Île de Ré et Oléron comprises</span>
-              </div>
-              <div className="stat on">
-                <b>[XX]</b>
-                <span>projets livrés depuis [année]</span>
-              </div>
-              <div className="stat">
-                <b>3</b>
-                <span>missions, du simple conseil au projet complet</span>
-              </div>
+            <div className="mat">
+              {matieres.map((m) => (
+                <figure key={m.nom}>
+                  <div className="ph r-md" style={{ aspectRatio: "4 / 5" }}>
+                    <Image src={`/matieres/${m.img}.jpg`} alt={`${m.nom} : ${m.lieu}`} fill sizes="(max-width: 960px) 50vw, 380px" />
+                  </div>
+                  <figcaption>
+                    <span className="serif">{m.nom}</span>
+                    {m.lieu}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </section>
 

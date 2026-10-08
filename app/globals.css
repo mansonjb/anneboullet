@@ -303,3 +303,14 @@ html{scroll-behavior:smooth}
   .frise h4{margin:9px 0 4px}
 }
 @media (prefers-reduced-motion:reduce){.mission:hover{transform:none}.temo-ph img{transition:none}}
+
+/* matières */
+.mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 24px}
+.mat figure:nth-child(3n+2){transform:translateY(56px)}
+.mat .ph img{transition:transform .8s ease}
+.mat figure:hover .ph img{transform:scale(1.04)}
+.mat figcaption{display:flex;flex-direction:column;gap:2px;margin-top:14px;font-size:14px;color:#655D54}
+.mat figcaption .serif{font-size:24px;color:#2A2622;line-height:1.2}
+#matieres{padding-bottom:56px}
+@media (max-width:960px){.mat{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}.mat figure:nth-child(3n+2){transform:none}.mat figure:nth-child(2n){transform:translateY(32px)}.mat figcaption{font-size:13px}.mat figcaption .serif{font-size:20px}#matieres{padding-bottom:32px}}
+@media (prefers-reduced-motion:reduce){.mat .ph img{transition:none}.mat figure:hover .ph img{transform:none}}
