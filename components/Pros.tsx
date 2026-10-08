@@ -54,7 +54,6 @@ export default function Pros() {
     setAuto(false);
     setI(k);
   };
-  const s = secteurs[i];
 
   return (
     <div className="pro2">
@@ -118,13 +117,17 @@ export default function Pros() {
             ),
           )}
         </div>
-        <figcaption className="pro2-cap" key={i}>
-          <span className="pro2-ex">{s.exemple}</span>
-          {s.texte}
-          <a className="pro2-more" href={`/professionnels/${s.slug}`}>
-            Découvrir le secteur {s.nom.toLowerCase()}
-            <Arrow size={14} />
-          </a>
+        <figcaption className="pro2-caps">
+          {secteurs.map((x, k) => (
+            <div key={x.nom} className={`pro2-cap${k === i ? " on" : ""}`} aria-hidden={k !== i}>
+              <span className="pro2-ex">{x.exemple}</span>
+              {x.texte}
+              <a className="pro2-more" href={`/professionnels/${x.slug}`} tabIndex={k === i ? 0 : -1}>
+                Découvrir le secteur {x.nom.toLowerCase()}
+                <Arrow size={14} />
+              </a>
+            </div>
+          ))}
         </figcaption>
       </figure>
     </div>

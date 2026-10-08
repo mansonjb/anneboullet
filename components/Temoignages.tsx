@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Arrow } from "./ui";
 
@@ -56,18 +56,38 @@ const avis = [
   },
 ];
 
+const DUREE = 15000;
+
 export default function Temoignages() {
   const [i, setI] = useState(0);
+  const [pause, setPause] = useState(false);
+  const [reduit, setReduit] = useState(false);
   const a = avis[i];
   const go = (d: number) => setI((x) => (x + d + avis.length) % avis.length);
 
+  useEffect(() => {
+    setReduit(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  // Défilement automatique toutes les 15 s, relancé à chaque changement, en pause au survol.
+  useEffect(() => {
+    if (pause || reduit) return;
+    const t = setTimeout(() => go(1), DUREE);
+    return () => clearTimeout(t);
+  }, [i, pause, reduit]);
+
   return (
     <>
-    <div>
-      <blockquote className="temo-q" aria-live="polite" key={i}>
-        <p className={`serif${a.texte.length > 180 ? " long" : ""}`}>« {a.texte} »</p>
-      </blockquote>
+    <div onMouseEnter={() => setPause(true)} onMouseLeave={() => setPause(false)} onFocus={() => setPause(true)} onBlur={() => setPause(false)}>
+      <div className="temo-stack" aria-live="polite">
+        {avis.map((x, k) => (
+          <blockquote key={x.nom} className={`temo-q${k === i ? " on" : ""}`} aria-hidden={k !== i}>
+            <p className={`serif${x.texte.length > 180 ? " long" : ""}`}>« {x.texte} »</p>
+          </blockquote>
+        ))}
+      </div>
       <div className="who">
+        {!pause && !reduit && <span className="who-bar" key={i} style={{ animationDuration: `${DUREE}ms` }} />}
         <div>
           <strong>{a.nom}</strong>
           <span>

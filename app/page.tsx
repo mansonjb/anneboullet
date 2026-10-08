@@ -14,12 +14,12 @@ const ermitage = getProjet("projet-ermitage") as Projet;
 
 
 const matieres = [
-  { nom: "Bois", img: "bois", lieu: "Charpente apparente, Saint-Denis-d'Oléron" },
-  { nom: "Fibres naturelles", img: "rotin", lieu: "Suspensions en rotin, Saint-Denis-d'Oléron" },
-  { nom: "Textiles", img: "lin", lieu: "Coussins et tissus imprimés, Saint-Denis-d'Oléron" },
-  { nom: "Zellige", img: "zellige", lieu: "Douche, Saint-Clément-des-Baleines" },
-  { nom: "Pierre", img: "pierre", lieu: "Mur en pierre, Saint-Clément-des-Baleines" },
-  { nom: "Teintes chaudes", img: "terre", lieu: "Tête de lit, Saint-Clément-des-Baleines" },
+  { nom: "Le bois", ligne: "Il porte la maison et la réchauffe.", img: "bois", lieu: "Charpente apparente, Saint-Denis-d'Oléron" },
+  { nom: "Les fibres", ligne: "Rotin et jute laissent passer une lumière adoucie.", img: "rotin", lieu: "Suspensions, Saint-Denis-d'Oléron" },
+  { nom: "Les textiles", ligne: "Lin et tissus imprimés invitent à s'installer.", img: "lin", lieu: "Coussins, Saint-Denis-d'Oléron" },
+  { nom: "Le zellige", ligne: "Chaque carreau renvoie la lumière à sa façon.", img: "zellige", lieu: "Douche, Saint-Clément-des-Baleines" },
+  { nom: "La pierre", ligne: "Elle garde la mémoire du lieu.", img: "pierre", lieu: "Mur en pierre, Saint-Clément-des-Baleines" },
+  { nom: "La couleur", ligne: "Une teinte chaude derrière le lit, et la chambre change d'humeur.", img: "terre", lieu: "Tête de lit, Saint-Clément-des-Baleines" },
 ];
 
 const etapes = [
@@ -178,23 +178,30 @@ export default function Home() {
           <section className="sec" id="matieres">
             <div className="sec-top">
               <h2 className="h2 serif">
-                Les matières <span className="mute">qui reviennent</span>
+                Une maison se raconte <span className="mute">par ses matières</span>
               </h2>
-              <p className="sec-lede">Bois, fibres naturelles, zellige, pierre : des matières vraies, qui vieillissent bien avec la maison.</p>
+              <p className="sec-lede">
+                Avant les couleurs et les meubles, je pense à ce que vous toucherez chaque jour. Des matières vraies, souvent travaillées par des
+                artisans d&apos;ici, qui vieillissent avec la maison au lieu de passer de mode.
+              </p>
             </div>
-            <div className="mat">
-              {matieres.map((m) => (
-                <figure key={m.nom}>
-                  <div className="ph r-md" style={{ aspectRatio: "4 / 5" }}>
-                    <Image src={`/matieres/${m.img}.jpg`} alt={`${m.nom} : ${m.lieu}`} fill sizes="(max-width: 960px) 50vw, 380px" />
-                  </div>
-                  <figcaption>
-                    <span className="serif">{m.nom}</span>
-                    {m.lieu}
-                  </figcaption>
-                </figure>
+            <ol className="mat">
+              {matieres.map((m, k) => (
+                <li key={m.nom}>
+                  <figure>
+                    <div className="ph r-md" style={{ aspectRatio: "4 / 5" }}>
+                      <Image src={`/matieres/${m.img}.jpg`} alt={`${m.nom.replace(/^L[ea]s? |^L'/, "")} : ${m.lieu}`} fill sizes="(max-width: 960px) 50vw, 380px" />
+                    </div>
+                    <figcaption>
+                      <span className="mat-n">0{k + 1}</span>
+                      <span className="serif mat-t">{m.nom}</span>
+                      <span className="mat-l">{m.ligne}</span>
+                      <span className="mat-p">{m.lieu}</span>
+                    </figcaption>
+                  </figure>
+                </li>
               ))}
-            </div>
+            </ol>
           </section>
 
           <section className="sec" id="professionnels">
