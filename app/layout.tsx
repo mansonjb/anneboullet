@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
-import localFont from "next/font/local";
+import { Fraunces, Jost } from "next/font/google";
 import Switcher from "@/components/Switcher";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
 const jost = Jost({ variable: "--font-jost", subsets: ["latin"], weight: ["400", "500"] });
-const larken = localFont({
-  variable: "--font-larken",
-  src: "./fonts/Larken-Light.woff2",
-  weight: "400",
-  display: "swap",
+const fraunces = Fraunces({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: "variable",
+  style: ["normal", "italic"],
+  axes: ["SOFT", "opsz"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ const init = `try{var d=document.documentElement,q=new URLSearchParams(location.
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" data-piste="vert" className={`${jost.variable} ${larken.variable}`} suppressHydrationWarning>
+    <html lang="fr" data-piste="vert" className={`${jost.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: init }} />
       </head>
