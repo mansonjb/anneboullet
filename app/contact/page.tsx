@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Crumbs, PageHead } from "@/components/blocks";
+import { Crumbs, FaqBlock, PageHead } from "@/components/blocks";
 import ContactForm from "@/components/ContactForm";
-import { contact } from "@/data/site";
+import { contact, faqPages } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact et rendez-vous",
@@ -65,6 +65,7 @@ export default function Contact() {
           <ContactForm id="cp" />
         </div>
       </section>
+      <FaqBlock items={faqPages.contact} />
     </>
   );
 }

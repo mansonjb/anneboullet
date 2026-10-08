@@ -2,12 +2,12 @@ import Image from "next/image";
 import Temoignages from "@/components/Temoignages";
 import Pros from "@/components/Pros";
 import ContactForm from "@/components/ContactForm";
-import { contact } from "@/data/site";
+import { contact, faqPages } from "@/data/site";
 import { Arrow, Ph } from "@/components/ui";
-import { ProjetCard } from "@/components/blocks";
+import { FaqBlock, ProjetCard } from "@/components/blocks";
 import { getProjet, type Projet } from "@/data/projets";
 import { missions, services } from "@/data/site";
-import { Chips, JsonLd } from "@/components/blocks";
+import { JsonLd } from "@/components/blocks";
 
 const oleron = getProjet("maison-de-famille-saint-denis-d-oleron") as Projet;
 const parpaillaud = getProjet("maison-de-village-saint-clement-des-baleines") as Projet;
@@ -154,9 +154,6 @@ export default function Home() {
                 ))}
               </ol>
             </div>
-            <div className="home-chips">
-              <Chips titre="Les savoir-faire du studio" items={services.map((s) => ({ href: `/services/${s.slug}`, label: s.nom }))} />
-            </div>
           </section>
 
           <section className="sec" id="realisations">
@@ -223,6 +220,31 @@ export default function Home() {
           <section className="sec" id="professionnels">
             <Pros />
           </section>
+
+          <section className="sec sf" id="savoir-faire">
+            <div className="sf-head">
+              <h2 className="h2 serif">
+                Huit savoir-faire, <span className="mute">un même regard</span>
+              </h2>
+              <a className="m-link" href="/services">
+                Tous les savoir-faire
+                <Arrow size={14} />
+              </a>
+            </div>
+            <ol className="sf-list">
+              {services.map((s, k) => (
+                <li key={s.slug}>
+                  <a href={`/services/${s.slug}`}>
+                    <span className="sf-n">{String(k + 1).padStart(2, "0")}</span>
+                    <span className="sf-name serif">{s.nom}</span>
+                    <Arrow size={16} />
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <FaqBlock items={faqPages.accueil} />
 
           <section className="sec" id="contact">
             <div className="contact">

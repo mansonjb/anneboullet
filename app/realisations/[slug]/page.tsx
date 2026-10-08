@@ -118,7 +118,16 @@ export default async function Realisation({ params }: PageProps<"/realisations/[
         ))}
       </section>
 
-      {p.faq && <FaqBlock items={p.faq} titre={<>Questions <span className="mute">sur ce projet</span></>} />}
+      <FaqBlock
+        items={
+          p.faq ?? [
+            ...(p.matieres ? [{ q: "Quelles matières pour ce projet ?", r: `${p.matieres.join(", ")}.` }] : []),
+            { q: "Un projet comme celui-ci est-il possible chez moi ?", r: "Oui, à La Rochelle, sur l'Île de Ré, à Oléron et à une heure autour. Tout commence par un premier échange, puis une visite sur place." },
+            { q: "Quelle mission choisir pour ce type de projet ?", r: "La conception si les pièces doivent être réorganisées, la décoration si l'agencement vous convient déjà." },
+          ]
+        }
+        titre={<>Questions <span className="mute">sur ce projet</span></>}
+      />
 
       {p.partenaires && (
         <section className="related">

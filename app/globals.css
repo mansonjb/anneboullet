@@ -635,3 +635,19 @@ html{scroll-behavior:smooth}
 .tag,.mat-tags li,.chips a,.filter,.seg label,.field input,.field select,.field textarea,.form-ok,.menu-btn{border-radius:2px}
 .form-ok{background:transparent;border-top:1px solid var(--rule);padding:24px 0}
 @media (max-width:960px){.pro2,.cta-band,.contact{padding:56px 0}.mission{padding:22px 0 24px}.mission:hover{padding-left:16px;padding-right:16px}}
+
+/* index des savoir-faire (accueil) */
+.sf-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px}
+.sf-head .h2 span{display:inline}
+.sf-head .m-link{margin:0;white-space:nowrap}
+.sf-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;border-bottom:1px solid var(--rule)}
+.sf-list li{border-top:1px solid var(--rule)}
+.sf-list li:nth-last-child(2):nth-child(odd){border-bottom:0}
+.sf-list a{display:grid;grid-template-columns:44px 1fr 24px;align-items:center;gap:12px;padding:22px 4px;text-decoration:none;color:#2A2622;transition:color .3s ease,padding .3s ease}
+.sf-n{font-size:12px;letter-spacing:.12em;color:var(--accent)}
+.sf-name{font-size:24px;line-height:1.2}
+.sf-list svg{stroke:var(--accent);transition:transform .3s ease}
+.sf-list a:hover{color:var(--accent);padding-left:12px}
+.sf-list a:hover svg{transform:translateX(6px)}
+@media (max-width:960px){.sf-head{flex-direction:column;align-items:flex-start}.sf-list{grid-template-columns:minmax(0,1fr)}.sf-name{font-size:20px}.sf-list a{padding:18px 0}}
+@media (prefers-reduced-motion:reduce){.sf-list a,.sf-list svg{transition:none}}

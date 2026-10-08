@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Crumbs, PageHead } from "@/components/blocks";
+import { Crumbs, FaqBlock, PageHead } from "@/components/blocks";
+import { faqPages } from "@/data/site";
 
 export const metadata: Metadata = { title: "Mentions légales" };
 
@@ -34,6 +35,7 @@ export default function Mentions() {
           modification ou leur suppression à tout moment par e-mail.
         </p>
       </section>
+      <FaqBlock items={faqPages.mentions} />
     </>
   );
 }

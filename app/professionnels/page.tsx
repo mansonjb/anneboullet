@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Crumbs, Cta, PageHead, Prose } from "@/components/blocks";
+import { Crumbs, Cta, FaqBlock, PageHead, Prose } from "@/components/blocks";
 import { Arrow } from "@/components/ui";
-import { secteurs } from "@/data/site";
+import { secteurs, faqPages } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Aménagement de lieux professionnels à La Rochelle",
@@ -74,6 +74,7 @@ export default function Professionnels() {
           ]}
         />
       </section>
+      <FaqBlock items={faqPages.professionnels} />
       <Cta titre="Parlons de votre lieu" texte="Un premier échange pour comprendre votre activité, vos équipes et vos contraintes." />
     </>
   );

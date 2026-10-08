@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Crumbs, Cta, PageHead } from "@/components/blocks";
+import { Crumbs, Cta, FaqBlock, PageHead } from "@/components/blocks";
 import { Ph } from "@/components/ui";
 import { getProjet, type Projet } from "@/data/projets";
-import { partenairesStudio } from "@/data/site";
+import { partenairesStudio, faqPages } from "@/data/site";
 import Partenaires from "@/components/Partenaires";
 
 export const metadata: Metadata = {
@@ -85,6 +85,7 @@ export default function Studio() {
         </div>
         <Partenaires cles={partenairesStudio} />
       </section>
+      <FaqBlock items={faqPages.studio} />
       <Cta />
     </>
   );

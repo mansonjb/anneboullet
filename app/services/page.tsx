@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Crumbs, Cta, PageHead } from "@/components/blocks";
+import { Crumbs, Cta, FaqBlock, PageHead } from "@/components/blocks";
 import { Arrow } from "@/components/ui";
-import { services } from "@/data/site";
+import { services, faqPages } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Savoir-faire : agencement, décoration, signalétique, 3D",
@@ -35,6 +35,7 @@ export default function Services() {
           ))}
         </div>
       </section>
+      <FaqBlock items={faqPages.services} />
       <Cta />
     </>
   );

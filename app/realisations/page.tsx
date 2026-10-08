@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Crumbs, Cta, PageHead } from "@/components/blocks";
+import { Crumbs, Cta, FaqBlock, PageHead } from "@/components/blocks";
+import { faqPages } from "@/data/site";
 import RealisationsGrid from "@/components/RealisationsGrid";
 import { projets } from "@/data/projets";
 
@@ -24,6 +25,7 @@ export default function Realisations() {
       <section style={{ paddingTop: 56 }}>
         <RealisationsGrid projets={projets} />
       </section>
+      <FaqBlock items={faqPages.realisations} />
       <Cta />
     </>
   );

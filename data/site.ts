@@ -176,7 +176,7 @@ export const missions: Mission[] = [
     ],
     faq: [
       { q: "Qu'est-ce qu'une shopping list déco ?", r: "Une liste précise de mobilier, luminaires, textiles et objets, avec leurs références, prête à commander. Vous restez libre d'acheter quand vous le souhaitez." },
-      { q: "Peut-on mélanger meubles anciens et neufs ?", r: "Oui, c'est même ce qui donne du caractère. Je mêle volontiers pièces chinées, objets de famille et mobilier contemporain." },
+      { q: "Meubles anciens et neufs vont-ils ensemble ?", r: "Oui, c'est même ce qui donne du caractère. Je mêle volontiers pièces chinées, objets de famille et mobilier contemporain." },
     ],
     services: ["decoration-interieure", "shopping-list", "planches-d-ambiance"],
     photo: { projet: "maison-de-famille-saint-denis-d-oleron", i: 15 },
@@ -385,7 +385,11 @@ export const services: Service[] = [
         ],
       },
     ],
-    faq: [{ q: "La signalétique peut-elle être faite seule ?", r: "[Réponse d'Anne à venir]" }],
+    faq: [
+      { q: "Quels lieux ont besoin d'une signalétique sur mesure ?", r: "Cabinets médicaux, services hospitaliers, bureaux, lieux d'accueil : partout où les visiteurs doivent s'orienter et être informés." },
+      { q: "La signalétique peut-elle suivre la décoration ?", r: "Oui, c'est tout l'intérêt : elle reprend les couleurs et les codes graphiques du lieu, comme à la maternité de La Rochelle." },
+      { q: "La signalétique peut-elle être faite seule ?", r: "[Réponse d'Anne à venir]" },
+    ],
     projets: ["salle-a-manger-parents-maternite-la-rochelle"],
   },
   {
@@ -434,7 +438,10 @@ export const services: Service[] = [
       },
       { titre: "Le détail de la mission", paragraphes: ["[Précisions d'Anne à venir sur le périmètre exact.]"] },
     ],
-    faq: [],
+    faq: [
+      { q: "Qu'est-ce qu'un maître d'ouvrage ?", r: "C'est la personne qui commande les travaux : le propriétaire, particulier ou entreprise." },
+      { q: "Cet accompagnement convient-il à une résidence secondaire ?", r: "Oui, il est particulièrement utile quand vous ne pouvez pas être sur place chaque semaine." },
+    ],
     projets: ["maison-de-famille-saint-denis-d-oleron"],
     mission: "conception",
   },
@@ -523,7 +530,11 @@ export const secteurs: Secteur[] = [
         paragraphes: ["La direction, les services techniques, la communication, l'assistante de direction ou les responsables de services : je m'adapte à votre organisation."],
       },
     ],
-    faq: [{ q: "Pouvez-vous améliorer la circulation et la capacité d'accueil ?", r: "[Réponse d'Anne à venir]" }],
+    faq: [
+      { q: "Impliquez-vous les équipes dans le projet ?", r: "Oui, c'est un atout : les équipes peuvent par exemple choisir le nom des salles." },
+      { q: "Avec qui travaillez-vous dans l'entreprise ?", r: "La direction, les services techniques, la communication, l'assistante de direction ou les responsables de services, selon votre organisation." },
+      { q: "Pouvez-vous améliorer la circulation et la capacité d'accueil ?", r: "[Réponse d'Anne à venir]" },
+    ],
   },
   {
     slug: "hebergement",
@@ -735,3 +746,45 @@ export const partenaires: Record<string, Partenaire> = {
 };
 
 export const partenairesStudio = ["maestro", "cbsols", "design17", "dma", "ryser", "cedeo", "aubade", "labrouche"];
+
+/* ------------------------------------------------------------------ */
+/* FAQ des pages sans contenu dédié (une FAQ sur chaque page)          */
+/* ------------------------------------------------------------------ */
+
+export const faqPages: Record<string, QR[]> = {
+  accueil: [
+    { q: "Où intervient Anne Boullet Studio ?", r: "À La Rochelle et à une heure autour : Île de Ré, Oléron, Châtelaillon-Plage, Rochefort, Royan et Saintes. Les missions à distance sont aussi possibles." },
+    { q: "Travaillez-vous pour les particuliers et les professionnels ?", r: "Oui. Les particuliers représentent l'essentiel des projets, et j'accompagne aussi des lieux de santé, des bureaux et des hébergements." },
+    { q: "Quelle mission choisir ?", r: "Le conseil pour avancer seul avec les bonnes pistes, la conception pour un projet qui touche à l'organisation des pièces, la décoration pour habiller un lieu déjà agencé." },
+    { q: "Décoratrice ou architecte d'intérieur : quelle différence ?", r: "Je suis décoratrice d'intérieur : j'interviens sur l'agencement, les matières, les couleurs et le mobilier, avec des plans de principe. Les travaux soumis à permis de construire sont portés par un architecte partenaire." },
+  ],
+  realisations: [
+    { q: "Quels types de projets réalisez-vous ?", r: "Des maisons de famille, des résidences secondaires, des maisons anciennes et des lieux professionnels : santé, bureaux, hébergement." },
+    { q: "Vos projets sont-ils tous situés près de La Rochelle ?", r: "Ils se situent à une heure autour de La Rochelle, notamment sur l'Île de Ré et à Oléron." },
+    { q: "Un projet comme ceux-ci est-il possible chez moi ?", r: "Tout commence par un premier échange, puis une visite sur place pour comprendre votre lieu et vos envies." },
+  ],
+  services: [
+    { q: "Un savoir-faire peut-il être choisi seul ?", r: "Chaque savoir-faire s'inscrit dans une mission de conseil, de conception ou de décoration. Le premier échange permet de définir ce dont votre projet a besoin." },
+    { q: "Réalisez-vous des perspectives 3D ?", r: "Oui, en option à l'avant-projet sommaire et dans l'avant-projet détaillé de la mission de conception." },
+    { q: "Suivez-vous les travaux ?", r: "J'assure un suivi esthétique du chantier jusqu'à la réception. La coordination des entreprises est confiée à un maître d'œuvre pour les projets importants." },
+  ],
+  professionnels: [
+    { q: "Quels lieux professionnels accompagnez-vous ?", r: "Les lieux de santé, les bureaux et les hébergements, comme les chambres d'hôtes et les locations saisonnières." },
+    { q: "Prenez-vous en charge la signalétique ?", r: "Oui, la signalétique fait partie de mes services, comme pour la maternité de La Rochelle." },
+    { q: "Impliquez-vous les équipes dans le projet ?", r: "Oui, c'est un atout : les équipes peuvent par exemple choisir le nom des salles." },
+  ],
+  studio: [
+    { q: "Où est installé le studio ?", r: "À La Rochelle, en Charente-Maritime." },
+    { q: "Avec quels artisans travaillez-vous ?", r: "Avec des artisans et des fournisseurs de la région, comme CB Sols pour les sols, Design 17 pour les cuisines ou Ryser pour les peintures." },
+    { q: "Qu'est-ce qui guide vos projets ?", r: "Le respect de l'histoire des lieux, des matières naturelles, l'artisanat local et une relation de confiance." },
+  ],
+  contact: [
+    { q: "Comment se passe le premier contact ?", r: "Un premier échange pour comprendre votre projet, puis une visite sur place suivie d'un devis accompagné d'un débriefing écrit." },
+    { q: "Vous déplacez-vous chez moi ?", r: "Oui, à une heure autour de La Rochelle. Des frais de déplacement s'ajoutent au-delà de 15 minutes de route." },
+    { q: "Que préparer avant de me contacter ?", r: "Quelques photos ou plans du lieu, la surface approximative et ce que vous souhaitez changer suffisent pour commencer." },
+  ],
+  mentions: [
+    { q: "À quoi servent les données du formulaire ?", r: "Uniquement à répondre à votre demande." },
+    { q: "Comment faire supprimer mes données ?", r: "Par simple e-mail : vos données sont modifiées ou supprimées sur demande." },
+  ],
+};

@@ -84,9 +84,9 @@ export const projets: Projet[] = [
     ],
     matieres: ["Bois blond", "Lin", "Jute", "Rotin", "Fibres naturelles", "Laiton"],
     faq: [
-      { q: "Peut-on donner du caractère à une maison récente ?", r: "Oui. Ici, une maison au bâti standard a trouvé une âme grâce à la redistribution des espaces, à la charpente laissée apparente et à des matières naturelles : bois, lin, jute et rotin." },
+      { q: "Une maison récente peut-elle avoir du caractère ?", r: "Oui. Ici, une maison au bâti standard a trouvé une âme grâce à la redistribution des espaces, à la charpente laissée apparente et à des matières naturelles : bois, lin, jute et rotin." },
       { q: "Qui dépose le permis de construire pour une extension ?", r: "Pour cette extension de 80 m², le permis de construire a été porté par un architecte partenaire. Je travaille la conception intérieure en lien avec lui." },
-      { q: "Peut-on garder ses meubles dans un projet de rénovation ?", r: "Oui. La redistribution de cette maison a été pensée à partir du mobilier que la famille souhaitait conserver." },
+      { q: "Mes meubles peuvent-ils rester dans un projet de rénovation ?", r: "Oui. La redistribution de cette maison a été pensée à partir du mobilier que la famille souhaitait conserver." },
     ],
     partenaires: ["maestro", "concas", "kheops", "aubry", "cedeo", "design17", "dma", "aps"],
     photos: p.oleron,
