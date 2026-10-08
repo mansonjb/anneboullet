@@ -579,3 +579,59 @@ html{scroll-behavior:smooth}
 @media (max-width:960px){.partners,.partners.compact{grid-template-columns:1fr 1fr}}
 .duo-portrait{grid-template-columns:minmax(0,400px) minmax(0,1fr)}
 @media (max-width:960px){.duo-portrait{grid-template-columns:minmax(0,1fr)}.duo-portrait figure{max-width:420px}}
+
+/* =================================================================
+   DIRECTION « MOINS IA » : filets éditoriaux, angles droits,
+   aplats de couleur pleine largeur. Pas de cartes arrondies à liseré.
+   ================================================================= */
+:root{--rule:rgba(42,38,34,.75);--rule-soft:rgba(42,38,34,.14)}
+.r-lg,.r-md,.ph,.temo-ph,.pro2-ph{border-radius:3px}
+
+/* cartes -> blocs éditoriaux séparés par un filet */
+.mission,.stat,.val,.other-link,.steps li,.card{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;box-shadow:none}
+.mission{padding:26px 24px 28px}
+.mission:hover{box-shadow:none;transform:none}
+.other-link{padding:22px 4px 24px}
+.other-link .arrow{background:transparent;border:1px solid var(--rule-soft)}
+.other-link:hover{transform:none;box-shadow:none;padding-left:20px;padding-right:20px}
+.val{padding:22px 0 0}
+.missions{gap:0 32px}
+
+/* témoignage, coordonnées, liens */
+.who{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;padding:18px 0 0;max-width:none}
+.ct-lines li{background:transparent;border-radius:0;border-bottom:1px solid var(--rule-soft);padding:14px 0}
+.p-links a,.p-links div{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;padding:14px 0;min-width:220px}
+.p-links a:hover{background:transparent;color:var(--accent)}
+.p-links a:hover span{color:#8E8378}
+.p-links a:hover svg{stroke:var(--accent);transform:translateX(3px)}
+
+/* partenaires : liste à filets, pas de cases */
+.partners{gap:0 32px}
+.partners a,.partners div{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;padding:18px 28px 22px 0}
+.partners a:hover{background:transparent;color:var(--accent);transform:none}
+.partners a:hover span:not(.serif){color:#655D54}
+.partners a:hover svg{stroke:var(--accent)}
+.partners a svg{right:0}
+
+/* aplats de couleur pleine largeur, angles droits */
+.pro2,.cta-band,.contact{border-radius:0;box-shadow:0 0 0 100vmax var(--bandbg);clip-path:inset(0 -100vmax)}
+.pro2,.cta-band{--bandbg:var(--tint)}
+.contact{--bandbg:#F4F1EC;background:#F4F1EC}
+.pro2{padding:88px 0}
+.cta-band{padding:88px 0;margin-top:160px}
+.contact{padding:88px 0}
+.zone-box{background:transparent;border-radius:0;border-top:1px solid var(--rule);padding:22px 0 0}
+
+/* onglets pros : lignes, plus de cases blanches */
+.pro2-tabs{gap:0}
+.pro2-tab{background:transparent;border:0;border-top:1px solid var(--rule);border-radius:0;padding:18px 12px}
+.pro2-tab:last-child{border-bottom:1px solid var(--rule)}
+.pro2-tab:hover{box-shadow:none;background:rgba(255,255,255,.35)}
+.pro2-tab.on{box-shadow:none}
+.pro2-tab .arrow{background:transparent;border:1px solid var(--rule-soft)}
+.pro2-tab.on .arrow{background:#fff;border-color:#fff}
+
+/* étiquettes, filtres, champs : angles quasi droits */
+.tag,.mat-tags li,.chips a,.filter,.seg label,.field input,.field select,.field textarea,.form-ok,.menu-btn{border-radius:2px}
+.form-ok{background:transparent;border-top:1px solid var(--rule);padding:24px 0}
+@media (max-width:960px){.pro2,.cta-band,.contact{padding:56px 0}.mission{padding:22px 0 24px}.mission:hover{padding-left:16px;padding-right:16px}}

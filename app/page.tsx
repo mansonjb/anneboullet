@@ -20,7 +20,7 @@ const matieres = [
   { nom: "Les textiles", ligne: "Lin et tissus imprimés invitent à s'installer.", img: "lin", lieu: "Coussins, Saint-Denis-d'Oléron" },
   { nom: "Le zellige", ligne: "Chaque carreau renvoie la lumière à sa façon.", img: "zellige", lieu: "Douche, Saint-Clément-des-Baleines" },
   { nom: "La pierre", ligne: "Elle garde la mémoire du lieu.", img: "pierre", lieu: "Mur en pierre, Saint-Clément-des-Baleines" },
-  { nom: "La couleur", ligne: "Une teinte chaude derrière le lit, et la chambre change d'humeur.", img: "terre", lieu: "Tête de lit, Saint-Clément-des-Baleines" },
+  { nom: "Le laiton", ligne: "Il se patine avec le temps et réchauffe la lumière.", img: "laiton", lieu: "Pommeau de douche, projet Beguin" },
 ];
 
 const etapes = [
