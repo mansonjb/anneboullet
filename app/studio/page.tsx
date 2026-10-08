@@ -8,12 +8,12 @@ import Partenaires from "@/components/Partenaires";
 
 export const metadata: Metadata = {
   title: "Le studio · Anne Boullet, décoratrice d'intérieur",
-  description: "Anne Boullet, décoratrice d'intérieur à La Rochelle : redonner une âme aux lieux, avec des matières vraies et des artisans d'ici.",
+  description: "Anne Boullet, décoratrice d'intérieur à La Rochelle : redonner une âme aux lieux, avec des matières naturelles et des artisans d'ici.",
 };
 
 const valeurs = [
   { t: "Respecter l'histoire des lieux", d: "Garder ce qui fait le caractère d'une maison, et lui redonner une âme." },
-  { t: "Des matières vraies", d: "Bois, lin, jute, rotin, zellige, chaux, travertin : des matières qui vieillissent bien." },
+  { t: "Des matières naturelles", d: "Bois, lin, jute, rotin, zellige, chaux, travertin : des matières qui vieillissent bien." },
   { t: "L'artisanat local", d: "Des artisans de confiance, choisis près de chez vous." },
   { t: "L'humain au cœur", d: "Une relation de confiance, pour que vous puissiez déléguer sereinement." },
 ];

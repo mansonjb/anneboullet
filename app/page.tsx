@@ -197,7 +197,7 @@ export default function Home() {
                 Une maison se raconte <span className="mute">par ses matières</span>
               </h2>
               <p className="sec-lede">
-                Avant les couleurs et les meubles, je pense à ce que vous toucherez chaque jour : des matières vraies, travaillées par des
+                Avant les couleurs et les meubles, je pense à ce que vous toucherez chaque jour : des matières naturelles, travaillées par des
                 artisans d&apos;ici, qui vieillissent avec la maison.
               </p>
             </div>

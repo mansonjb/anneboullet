@@ -304,7 +304,7 @@ export const services: Service[] = [
     h1: "Décoration intérieure de maisons et d'appartements",
     seoTitre: "Décoratrice d'intérieur à La Rochelle, Île de Ré et Oléron",
     description: "Décoration intérieure autour de La Rochelle : mobilier, luminaires, textiles et objets, pour des maisons lumineuses, chaleureuses et intemporelles.",
-    lede: "Donner une âme à un lieu, avec des matières vraies et des objets qui comptent.",
+    lede: "Donner une âme à un lieu, avec des matières naturelles et des objets qui comptent.",
     sections: [
       {
         titre: "Lumineux, chaleureux, naturel",
