@@ -725,7 +725,7 @@ export const partenaires: Record<string, Partenaire> = {
   dma: { nom: "Décoration Matériaux Atlantique", metier: "Poêles et inserts" },
   ryser: { nom: "Ryser", metier: "Peintures et conseil couleur, La Rochelle", url: "https://ryser.fr" },
   cedeo: { nom: "Cedeo", metier: "Sanitaire et salle de bains", url: "https://www.cedeo.fr" },
-  aubade: { nom: "Aubade", metier: "Salle de bains" },
+  aubade: { nom: "Aubade", metier: "Salle de bains", url: "https://www.espace-aubade.fr" },
   labrouche: { nom: "Labrouche Antiquaire", metier: "Matériaux anciens, Aytré" },
   concas: { nom: "Samuel Concas", metier: "Architecte" },
   kheops: { nom: "Kheops création", metier: "[Métier à préciser]" },
