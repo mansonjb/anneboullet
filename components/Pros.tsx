@@ -34,7 +34,7 @@ const secteurs = [
   },
 ];
 
-const DUREE = 5000;
+const DUREE = 15000;
 
 export default function Pros() {
   const [i, setI] = useState(0);
@@ -85,7 +85,6 @@ export default function Pros() {
               <span className="arrow">
                 <Arrow size={14} />
               </span>
-              {k === i && auto && <span className="pro2-bar" style={{ animationDuration: `${DUREE}ms` }} />}
             </button>
           ))}
         </div>

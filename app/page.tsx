@@ -192,13 +192,13 @@ export default function Home() {
           </section>
 
           <section className="sec" id="matieres">
-            <div className="sec-top">
+            <div className="sec-top sec-top-wide">
               <h2 className="h2 serif">
                 Une maison se raconte <span className="mute">par ses matières</span>
               </h2>
               <p className="sec-lede">
-                Avant les couleurs et les meubles, je pense à ce que vous toucherez chaque jour. Des matières vraies, souvent travaillées par des
-                artisans d&apos;ici, qui vieillissent avec la maison au lieu de passer de mode.
+                Avant les couleurs et les meubles, je pense à ce que vous toucherez chaque jour : des matières vraies, travaillées par des
+                artisans d&apos;ici, qui vieillissent avec la maison.
               </p>
             </div>
             <ol className="mat">

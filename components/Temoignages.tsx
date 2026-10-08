@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Arrow } from "./ui";
 
-// Avis Google réels (extraits, coupures signalées par, coquilles corrigées).
+// Avis Google réels (extraits, coquilles corrigées).
 const avis = [
   {
     texte:
@@ -87,7 +87,6 @@ export default function Temoignages() {
         ))}
       </div>
       <div className="who">
-        {!pause && !reduit && <span className="who-bar" key={i} style={{ animationDuration: `${DUREE}ms` }} />}
         <div>
           <strong>{a.nom}</strong>
           <span>
