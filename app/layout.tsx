@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Jost, Newsreader } from "next/font/google";
 import Switcher from "@/components/Switcher";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const jost = Jost({ variable: "--font-jost", subsets: ["latin"], weight: ["400", "500"] });
@@ -12,7 +14,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Anne Boullet Studio · Décoratrice d'intérieur à La Rochelle",
+  metadataBase: new URL("https://anneboullet.vercel.app"),
+  title: { default: "Anne Boullet Studio · Décoratrice d'intérieur à La Rochelle", template: "%s · Anne Boullet Studio" },
   description:
     "Conseil, conception et décoration pour les particuliers et les professionnels, à une heure autour de La Rochelle, sur l'Île de Ré et Oléron.",
   robots: { index: false, follow: false },
@@ -29,7 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body>
         <a className="skip" href="#contenu">Aller au contenu</a>
-        {children}
+        <div className="page">
+          <div className="wrap">
+            <Header />
+            <main id="contenu">{children}</main>
+            <Footer />
+          </div>
+        </div>
         <Switcher />
       </body>
     </html>

@@ -4,10 +4,11 @@ import { useState } from "react";
 import { Logo } from "./ui";
 
 const liens = [
-  { href: "/#realisations", label: "Réalisations" },
+  { href: "/realisations", label: "Réalisations" },
   { href: "/#missions", label: "Missions" },
-  { href: "/#professionnels", label: "Professionnels" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/professionnels", label: "Professionnels" },
+  { href: "/studio", label: "Le studio" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -26,7 +27,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="hd-right">
-          <a className="pill-btn solo hd-cta bg-surface" href="/#contact">
+          <a className="pill-btn solo hd-cta bg-surface" href="/contact">
             Prendre rendez-vous
           </a>
           <button
