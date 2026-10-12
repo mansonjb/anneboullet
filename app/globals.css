@@ -600,3 +600,9 @@ html{scroll-behavior:smooth}
 
 /* Fraunces : graisse légère et empattements adoucis, proche de Larken */
 .serif,.stat b,.pro li b,.mnav a,.frise .f-n,.pro2-ex{font-weight:300;font-variation-settings:"SOFT" 60}
+
+/* logos partenaires : cadre fixe, logo entier */
+.partners .pt-logo{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:16 / 9;margin-bottom:14px;background:#fff;border:1px solid rgba(31,28,25,.08);overflow:hidden}
+.partners .pt-logo img{object-fit:contain;padding:14px}
+.partners .pt-word{font-family:var(--font-serif),Georgia,serif;font-size:19px;color:#8E8378;text-align:center;padding:0 12px;line-height:1.15}
+.partners a:hover .pt-word{color:#8E8378}
